@@ -2,59 +2,61 @@
 
 ## I. Description
 
-Diablo 1 CL2 graphics files use the [ .cl2 ] file extension.
+Diablo 1 CL2 graphics files use the `.cl2` file extension.
 CL2 graphics files contain multiple frames (images).
 Also CL2 graphics files often contain multiple groups of frames.
 A CL2 graphics file needs a color palette file to be rendered.
 
-CL2 data longer than one byte (WORDs and DWORDs) is stored
-using little-endian byte order.
+CL2 data longer than one byte (WORDs and DWORDs) is stored using little-endian byte order.
 
 ## II. File structure
 
+```
 {CL2 HEADER}
 {CL2 FRAME} * {NUMBER OF CL2 FRAMES}
-
+```
 
 ## III. `{CL2 HEADER}`
 
+```
 [{CL2 GROUP HEADER}]
 {CL2 CLIP HEADER}
+```
 
 There are two types of CL2 graphics files : mono-group CL2 files and multi-group CL2 files.
-Mono-group CL2 files do not feature {CL2 GROUP HEADER} in the {CL2 HEADER}.
+Mono-group CL2 files do not feature `{CL2 GROUP HEADER}` in the `{CL2 HEADER}`.
 
 ### III.1 `{CL2 GROUP HEADER}`
 
-{CL2 GROUP OFFSET} * {NUMBER OF CL2 GROUPS}
+`{CL2 GROUP OFFSET} * {NUMBER OF CL2 GROUPS}`
 
-The {CL2 GROUP HEADER} consists of one DWORD for each group.
-Each DWORD is a {CL2 GROUP OFFSET} indicating where the {CL2 CLIP HEADER} 
-of the group starts.
-
+The `{CL2 GROUP HEADER}` consists of one DWORD for each group.
+Each DWORD is a `{CL2 GROUP OFFSET}` indicating where the `{CL2 CLIP HEADER}` of the group starts.
 
 ### III.2 `{CL2 CLIP HEADER}`
 
+```
 {NUMBER OF CL2 FRAMES IN GROUP}
 {CL2 FRAME OFFSET} * {NUMBER OF CL2 FRAMES IN GROUP}
 {NEXT CL2 GROUP OFFSET}
+```
 
-The {NUMBER OF CL2 FRAMES IN GROUP} is one DWORD long.
+The `{NUMBER OF CL2 FRAMES IN GROUP}` is one DWORD long.
 Then there is one DWORD for each frame of the CL2 frame group,
-each indicating the {CL2 FRAME OFFSET} where the frame data begins.
-After the CL2 frame offsets, comes one last DWORD containing offset of the
-first frame of the next group of the CL2 graphics file.
+each indicating the `{CL2 FRAME OFFSET}` where the frame data begins.
+After the CL2 frame offsets, comes one last DWORD containing offset of the first frame of the next group of the CL2 graphics file.
 For the last frame, this offset contains the CL2 graphics file size 
 
 ## IV. `{CL2 FRAME}`
 
+```
 {CL2 FRAME HEADER}
 {CL2 FRAME DATA}
-
+```
 
 ### IV.1 `{CL2 FRAME HEADER}`
 
-The {CL2 FRAME} always starts with a five WORDs {CL2 FRAME HEADER}.
+The `{CL2 FRAME}` always starts with a five WORDs {CL2 FRAME HEADER}.
 Each WORD of this header is an offset (relative to the beginning of the {CL2 FRAME}) 
 pointing to a 32 pixel lines block. The first WORD is always 0x0A00 ( 5 * WORD_SIZE = 10 = 0x000A ) 
 because the first 32 pixel lines block starts immediately after the {CL2 FRAME HEADER}.
