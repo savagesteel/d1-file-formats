@@ -6,4 +6,4 @@ The goal of this project is to provide precise specifications for Diablo 1 (and 
 
 
 
-**Work in progress: TRN, CEL, CL2, MIN, TIL, SOL, AMP**
+*Work in progress: TRN, CEL, CL2, MIN, TIL, SOL, AMP*
