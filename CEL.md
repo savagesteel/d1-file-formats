@@ -38,26 +38,23 @@ After the CEL frame offsets, comes one last DWORD containing the CEL graphics fi
 ```
 
 
-IV.1) {CEL FRAME HEADER}
-------------------------
-	
-	The {CEL FRAME} can optionally start with a five WORDs {CEL FRAME HEADER}.
-	Each WORD of this header is an offset (relative to the beginning of the {CEL FRAME}) 
-	pointing to a 32 pixel lines block. The first WORD is always 0x0A00 ( 5 * WORD_SIZE = 10 = 0x000A ) 
-	because the first 32 pixel lines block starts immediately after the {CEL FRAME HEADER}.
+## IV.1 `{CEL FRAME HEADER}`
 
-	<## NOTE
+The `{CEL FRAME}` can **optionally** start with a five WORDs `{CEL FRAME HEADER}`.
 
-	{CEL FRAME} width can be calculated based on the {CEL FRAME HEADER} and the number of pixels
-	of the {CEL FRAME}.
-	For each WORD of the {CEL FRAME HEADER} the following formula can be used:
+Each WORD of this header is an offset (relative to the beginning of the `{CEL FRAME}`) pointing to a 32 pixel lines block.
+The first WORD is always `0x0A00` (`5 * WORD_SIZE = 10 = 0x000A`) because the first 32 pixel lines block starts immediately after the `{CEL FRAME HEADER}`.
 
-	{CEL FRAME WIDTH} = {CEL FRAME CHUNK NUMBER OF PIXELS} / 32
+> NOTE
+> `{CEL FRAME}` width can be calculated based on the `{CEL FRAME HEADER}` and the number of pixels of the `{CEL FRAME}`.
+> For each WORD of the `{CEL FRAME HEADER}` the following formula can be used:
 
-	{CEL FRAME CHUNK NUMBER OF PIXELS} is the number of pixels 
-	between two offsets (WORDs) of the {CEL FRAME HEADER}.
+{CEL FRAME WIDTH} = {CEL FRAME CHUNK NUMBER OF PIXELS} / 32
 
-	##>
+{CEL FRAME CHUNK NUMBER OF PIXELS} is the number of pixels 
+between two offsets (WORDs) of the {CEL FRAME HEADER}.
+
+##>
 
 
 IV.2) {CEL FRAME DATA}
