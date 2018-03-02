@@ -38,7 +38,7 @@ After the CEL frame offsets, comes one last DWORD containing the CEL graphics fi
 ```
 
 
-## IV.1 `{CEL FRAME HEADER}`
+### IV.1 `{CEL FRAME HEADER}`
 
 The `{CEL FRAME}` can **optionally** start with a five WORDs `{CEL FRAME HEADER}`.
 
@@ -55,7 +55,7 @@ For each WORD of the `{CEL FRAME HEADER}` the following formula can be used:
 
 `{CEL FRAME CHUNK NUMBER OF PIXELS}` is the number of pixels between two offsets (WORDs) of the `{CEL FRAME HEADER}`.
 
-## IV.2 `{CEL FRAME DATA}`
+### IV.2 `{CEL FRAME DATA}`
 
 A CEL frame is an image.
 The frame data defines each pixel of the frame, starting from the bottom pixel line.
