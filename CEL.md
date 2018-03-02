@@ -46,18 +46,14 @@ Each WORD of this header is an offset (relative to the beginning of the `{CEL FR
 The first WORD is always `0x0A00` (`5 * WORD_SIZE = 10 = 0x000A`) because the first 32 pixel lines block starts immediately after the `{CEL FRAME HEADER}`.
 
 > NOTE
-
+>
 > `{CEL FRAME}` width can be calculated based on the `{CEL FRAME HEADER}` and the number of pixels of the `{CEL FRAME}`.
-
+>
 > For each WORD of the `{CEL FRAME HEADER}` the following formula can be used:
-
-{CEL FRAME WIDTH} = {CEL FRAME CHUNK NUMBER OF PIXELS} / 32
-
-{CEL FRAME CHUNK NUMBER OF PIXELS} is the number of pixels 
-between two offsets (WORDs) of the {CEL FRAME HEADER}.
-
-##>
-
+>
+>   `{CEL FRAME WIDTH} = {CEL FRAME CHUNK NUMBER OF PIXELS} / 32`
+> 
+> `{CEL FRAME CHUNK NUMBER OF PIXELS}` is the number of pixels between two offsets (WORDs) of the {CEL FRAME HEADER}.
 
 IV.2) {CEL FRAME DATA}
 ----------------------
