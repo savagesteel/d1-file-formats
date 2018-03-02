@@ -108,40 +108,30 @@ DIABDAT.MPQ:/ctrlpan/spelicon.cel
 DIABDAT.MPQ:/data/inv/objcurs.cel
 ```
 
-IV.2.2 Level CEL files
-----------------------
+#### IV.2.2 Level CEL files
 
 Level CEL files contain typically more than 500 frames.
 Each frame is 32 x 32 pixels.
-Frame can be either coded using the regular encoding (as described in IV.2.1),
-or with special encoding.
-Special encoded frames have 0x220, 0x320 or 0x400 bytes size.
-Special encoded frames do not use encoding bytes, instead they 
-just contain palette indices and special 2 bytes sequences (0x00, 0x00)
-indicating to fill the rest of the pixel line with transparent pixels.
+Frame can be either coded using the regular encoding (as described in IV.2.1), or with special encoding.
+Special encoded frames have `0x220`, `0x320` or `0x400` bytes size.
+Special encoded frames do not use encoding bytes, instead they just contain palette indices and special 2 bytes sequences (`0x00`, `0x00`) indicating to fill the rest of the pixel line with transparent pixels.
 
-<## EXAMPLE
+**EXAMPLE**
 
+```
 DIABDAT.MPQ:/levels/l1data/l1.cel
 DIABDAT.MPQ:/levels/l3data/l3.cel
+```
 
-##>
+##### IV.2.2.1 Type 0 frames (upper wall) (`0x400` bytes)
 
+These frames do not have any transparency so they consist of `32*32 = 1024 = 0x400` palette indices:
 
-IV.2.2.1 Type 0 frames (upper wall) (0x400 bytes)
--------------------------------------------------
+`{PALETTE INDEX} * 1024`
 
-These frames do not have any transparency so they consist of
-32*32 = 1024 = 0x400 palette indices:
+**EXAMPLE**
 
-{PALETTE INDEX} * 1024
-
-<## EXAMPLE
-
-DIABDAT.MPQ:/levels/l1data/l1.cel, frame 2
-
-##>
-
+`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 2
 
 IV.2.2.2 Type 1 frames
 ----------------------
