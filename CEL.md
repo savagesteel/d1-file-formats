@@ -25,16 +25,17 @@ CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian b
 
 The `{NUMBER OF CEL FRAMES}` is one DWORD long.
 
-Then there is one DWORD for each frame of the CEL graphics file, each indicating the {CEL FRAME OFFSET} where the frame data begins.
+Then there is one DWORD for each frame of the CEL graphics file, each indicating the `{CEL FRAME OFFSET}` where the frame data begins.
 
 After the CEL frame offsets, comes one last DWORD containing the CEL graphics file size.
 
 
-IV) {CEL FRAME}
----------------
+## IV. `{CEL FRAME}`
 
-	[{CEL FRAME HEADER}]
-	{CEL FRAME DATA}
+```
+[{CEL FRAME HEADER}]
+{CEL FRAME DATA}
+```
 
 
 IV.1) {CEL FRAME HEADER}
