@@ -11,11 +11,11 @@ A CEL graphics file needs a [color palette](PAL.md) file to be rendered.
 CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian byte order.
 
 
-II) File structure
-------------------
+## II. File structure
 
-	{CEL HEADER}
-	{CEL FRAME} * {NUMBER OF CEL FRAMES}
+```{CEL HEADER}
+{CEL FRAME} * {NUMBER OF CEL FRAMES}
+```
 
 
 III) {CEL HEADER}
