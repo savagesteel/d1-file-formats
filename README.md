@@ -9,4 +9,4 @@ Most of the knowledge here comes from the Diablo 1 and Hellfire modding communit
 - [Diablo 1 CEL File Format - Graphics](CEL.md)
 - [Diablo 1 CL2 File Format - Graphics](CL2.md)
 
-*Work in progress: MIN, TIL, SOL, AMP*
+*Work in progress: MIN, TIL, SOL, AMP, DUN*
