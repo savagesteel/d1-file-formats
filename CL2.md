@@ -56,23 +56,19 @@ For the last frame, this offset contains the CL2 graphics file size
 
 ### IV.1 `{CL2 FRAME HEADER}`
 
-The `{CL2 FRAME}` always starts with a five WORDs {CL2 FRAME HEADER}.
-Each WORD of this header is an offset (relative to the beginning of the {CL2 FRAME}) 
-pointing to a 32 pixel lines block. The first WORD is always 0x0A00 ( 5 * WORD_SIZE = 10 = 0x000A ) 
-because the first 32 pixel lines block starts immediately after the {CL2 FRAME HEADER}.
+The `{CL2 FRAME}` always starts with a five WORDs `{CL2 FRAME HEADER}`.
+Each WORD of this header is an offset (relative to the beginning of the `{CL2 FRAME}`) 
+pointing to a 32 pixel lines block. The first WORD is always `0x0A00` (`5 * WORD_SIZE = 10 = 0x000A`) 
+because the first 32 pixel lines block starts immediately after the `{CL2 FRAME HEADER}`.
 
-<## NOTE
+**NOTE**
 
-{CL2 FRAME} width is calculated based on the {CL2 FRAME HEADER} and the number of pixels
-of the {CL2 FRAME}.
-For each WORD of the {CL2 FRAME HEADER} the following formula can be used:
+`{CL2 FRAME}` width is calculated based on the `{CL2 FRAME HEADER}` and the number of pixels of the `{CL2 FRAME}`.
+For each WORD of the `{CL2 FRAME HEADER}` the following formula can be used:
 
-{CL2 FRAME WIDTH} = {CL2 FRAME CHUNK NUMBER OF PIXELS} / 32
+`{CL2 FRAME WIDTH} = {CL2 FRAME CHUNK NUMBER OF PIXELS} / 32`
 
-{CL2 FRAME CHUNK NUMBER OF PIXELS} is the number of pixels 
-between two offsets (WORDs) of the {CL2 FRAME HEADER}.
-
-##>
+`{CL2 FRAME CHUNK NUMBER OF PIXELS}` is the number of pixels between two offsets (WORDs) of the `{CL2 FRAME HEADER}`.
 
 ### IV.2 `{CL2 FRAME DATA}`
 
@@ -82,35 +78,29 @@ and ending with the top right pixel.
 
 Pixels are encoded as follow:
 
+```
 {ENCODING BYTE}
 [{PALETTE INDEX} || {PALETTE INDEX} * {PIXEL NUMBER}]
+```
 
-If {ENCODING BYTE} value is in the [0x01, 0x7F] range,
-then {ENCODING BYTE} transparent pixels are added.
+If `{ENCODING BYTE}` value is in the `[0x01, 0x7F]` range,
+then `{ENCODING BYTE}` transparent pixels are added.
 
-If {ENCODING BYTE} value is in the [0x80, 0xBE] range,
-then only one {PALETTE INDEX} follows. 191 - {ENCODING BYTE} pixels with
-this {PALETTE INDEX} color are added. 
+If `{ENCODING BYTE}` value is in the `[0x80, 0xBE]` range, then only one `{PALETTE INDEX}` follows. `191 - {ENCODING BYTE}` pixels with this `{PALETTE INDEX}` color are added. 
 
-If {ENCODING BYTE} value is in the [0xBF, 0xFF] range,
-then a number of 256 - {ENCODING BYTE} palette indices follow (see NOTE).
+If `{ENCODING BYTE}` value is in the `[0xBF, 0xFF]` range, then a number of `256 - {ENCODING BYTE}` palette indices follow (see NOTE).
 
-<## NOTE
+**NOTE**
 
-When a CEL/CL2 graphics file refers to a palette color, 
-it uses a one byte {PALETTE INDEX} in the [0x00, 0xFF] range.
-This index refers to the {PALETTE INDEX}th color in the color palette.
-To find the corresponding {COLOR PALETTE OFFSET} 
-in the color palette file, use the following formula:
+When a CEL/CL2 graphics file refers to a palette color, it uses a one byte `{PALETTE INDEX}` in the `[0x00, 0xFF]` range.
+This index refers to the `{PALETTE INDEX}`th color in the color palette.
+To find the corresponding `{COLOR PALETTE OFFSET} ` in the color palette file, use the following formula:
 
-{COLOR PALETTE OFFSET} = 3 * {PALETTE INDEX}
-
-##>
+`{COLOR PALETTE OFFSET} = 3 * {PALETTE INDEX}`
 
 ## VI. Credits
 
 Most of this document is based on the work of the following people:
-
-Honi B
-ArthurDent
-Zamal & Zenda
+- Honi B
+- ArthurDent
+- Zamal & Zenda
