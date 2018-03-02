@@ -203,7 +203,7 @@ Last line is not encoded, it consists of 32 transparent pixels.
 
 `DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 7
 
-##### IV.2.2.4  Type 4 and 5 frames (wall bottom) (0x320 bytes)
+##### IV.2.2.4  Type 4 and 5 frames (wall bottom) (`0x320` bytes)
 
 These frames consist of a lower part and an upper part, each with a 32 x 16 pixels size.
 Type 4 frames have transparency on the left.
@@ -214,7 +214,7 @@ Type 5 frames have transparency on the right.
 The lower part of these 0x320 bytes frames is the same than the lower part of type 2 and 3 frames
 (see part IV.2.2.3).
 
-**Upper part (0x200 bytes)**
+**Upper part (`0x200` bytes)**
 
 The upper part does not have any transparency so they consist of `32*16 = 512 = 0x200` palette indices:
 
