@@ -4,8 +4,8 @@
 ## I. Description
 
 Diablo 1 color palettes use the `.pal` file extension.
-Color palettes are sets of 256 colors.
-Color palettes are used to render CEL/CL2 graphics.
+
+Color palettes are sets of 256 colors used to render CEL/CL2 graphics.
 
 ## II. File structure
 
@@ -15,11 +15,7 @@ Color palettes are used to render CEL/CL2 graphics.
 
 ## III. `{PALETTE COLOR}` (3 bytes)
 
-`{RED COMPONENT}`
-
-`{GREEN COMPONENT}`
-
-`{BLUE COMPONENT}`
+`{RED COMPONENT} {GREEN COMPONENT} {BLUE COMPONENT}`
 
 Each color is 3 bytes. First byte is the red color component,
 second is the green color component and third is the blue color component
