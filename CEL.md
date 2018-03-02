@@ -216,8 +216,7 @@ The lower part of these 0x320 bytes frames is the same than the lower part of ty
 
 **Upper part (0x200 bytes)**
 
-The upper part does not have any transparency so they
-consist of 32*16 = 512 = 0x200 palette indices:
+The upper part does not have any transparency so they consist of `32*16 = 512 = 0x200` palette indices:
 
 `{PALETTE INDEX} * 512`
 
@@ -232,7 +231,7 @@ Some CEL files are in fact a compilation of multiple CEL files, thus the header 
 
 `{CEL OFFSET} * {NUMBER OF CEL}`
 
-After this header, at each {CEL OFFSET} comes a CEL file with the structure described in part II.
+After this header, at each `{CEL OFFSET}` comes a CEL file with the structure described in part II.
 
 **EXAMPLE**
 
