@@ -1,188 +1,171 @@
-Diablo 1 Level Graphics File Types Specification
-================================================
+# Diablo 1 MIN and TIL File Formats - Level Graphics
 
-I) Description
---------------
+## I. Description
 
-	Diablo 1 level graphics depend on several files, first it depends
-	on specific CEL graphics files and color palettes which contain 
-	the actual pixel data in the form of small 32 x 32 pixels frames. 
-	Secondly it relies on sub-tiles with [ .min ] file extension and 
-	tiles with [ .til ] file extension. Tiles and sub-tiles define
-	layouts of 32 x 32 pixels frames which result in larger frames
-	representing level parts.
+Diablo 1 level graphics depend on several files, first it depends
+on specific CEL graphics files and color palettes which contain 
+the actual pixel data in the form of small 32 x 32 pixels frames. 
+Secondly it relies on sub-tiles with [ .min ] file extension and 
+tiles with [ .til ] file extension. Tiles and sub-tiles define
+layouts of 32 x 32 pixels frames which result in larger frames
+representing level parts.
 
-	Level graphics data longer than one byte (WORDs and DWORDs)
-	is stored using little-endian byte order.
+Level graphics data longer than one byte (WORDs and DWORDs)
+is stored using little-endian byte order.
 
+## II. File Naming
 
-II) File Naming
----------------
+The level files are in levels/lXdata folders for Diablo
+and NLevels/lXdata for Hellfire, where X is:
 
-	The level files are in levels/lXdata folders for Diablo
-	and NLevels/lXdata for Hellfire, where X is:
-	
-		* 1 for Dungeon
-		* 2 for Catacombs
-		* 3 for Caves
-		* 4 for Hell
-		* 5 for Crypt
-		* 6 for Nest
-		* town for Tristram
+* 1 for Dungeon
+* 2 for Catacombs
+* 3 for Caves
+* 4 for Hell
+* 5 for Crypt
+* 6 for Nest
+* town for Tristram
 
+### II.1 CEL Graphics Files
 
-II.1) CEL Graphics Files
-------------------------
-	
-	Level CEL graphics files are named as follows:
-	
-		- lX.cel
+Level CEL graphics files are named as follows:
 
-	Those files contains 32x32 pixels frames (as described in part IV.2.2
-	of the CEL Graphics File Type Specification).
+- lX.cel
 
-	In addition the following CEL graphics files are used to store archs graphics:
-	
-		- l1s.cel, l2s.cel, l5s and towns.cel 
+Those files contains 32x32 pixels frames (as described in part IV.2.2
+of the CEL Graphics File Type Specification).
 
-	Those files contains 8 64x160 pixels frames.
+In addition the following CEL graphics files are used to store archs graphics:
 
+- l1s.cel
+- l2s.cel
+- l5s
+- towns.cel 
 
-II.2) Color Palettes
---------------------
-	
-	Level color palettes are named as follows:
-	
-	- lX.pal
-	- lX_N.pal with N an integer in the [1,5] range
-	- lXpalg.pal
-	- l3_w.pal, l3pfoul.pal, l3pwater.pal and l3_i.pal
+Those files contains eight 64 x 160 pixels frames.
 
-	lX.pal and lX_1.pal are identical.
-	
-	lX_N.pal files are used for alternative color schemes.
-	The Crypt do not use alternative color schemes, only l5.pal exists.
-	
-	lXpalg.pal files are used to display levels in grayscale color scheme.
+### II.2 Color Palettes
 
-	l3_w.pal and l3pwater.pal are identical.
-	l3pfoul.pal and l3pwater.pal are used for the Poisoned Water Supply level,
-	l3pfoul.pal is used to display poisoned yellow water and
-	l3pwater.pal is used to display clean blue water.
-	
-	l3_i.pal is an unused color palette which can display caves with an iced look, i.e.
-	the magma looks like frozen water and the rocks have a blue/ice color scheme.
+Level color palettes are named as follows:
 
+- lX.pal
+- lX_N.pal with N an integer in the [1,5] range
+- lXpalg.pal
+- l3_w.pal
+- l3pfoul.pal
+- l3pwater.pal
+- l3_i.pal
 
-II.3) MIN and TIL Level Graphics Files
---------------------------------------
+lX.pal and lX_1.pal are identical.
 
-	Level graphics files are named as follows:
+lX_N.pal files are used for alternative color schemes.
+The Crypt do not use alternative color schemes, only l5.pal exists.
 
-	- lX.min
-	- lX.til
+lXpalg.pal files are used to display levels in grayscale color scheme.
+
+l3_w.pal and l3pwater.pal are identical.
+l3pfoul.pal and l3pwater.pal are used for the Poisoned Water Supply level,
+l3pfoul.pal is used to display poisoned yellow water and
+l3pwater.pal is used to display clean blue water.
+
+l3_i.pal is an unused color palette which can display caves with an iced look, i.e.
+the magma looks like frozen water and the rocks have a blue/ice color scheme.
+
+### II.3 MIN and TIL Level Graphics Files
+
+Level graphics files are named as follows:
+
+- lX.min
+- lX.til
 
 
-III) MIN Graphics Files
------------------------
+## III. MIN Graphics Files
 
-	Those files contain the layout of CEL frames for a level square.
-	A level square is for example the square where your character stands.
-	A square has a 64 x 32 pixels size (two 32 x 32 pixels frames from the lX.cel file).
-	But a MIN graphics file does not only defines the pattern of the ground,
-	it also defines anything built on this level square (e.g. a wall).
-	The resulting image is called a sub-tile.
-	Sub-tiles can either have a 64 x 160 pixels size (Dungeon, Catacombs, Caves, Nest, Crypt)
-	or a 64 x 256  pixels size (Town and Hell).
-
-
-III.1) File Structure
----------------------
-
-	{SUB-TILE DATA} * {NUMBER OF SUB-TILES}
+Those files contain the layout of CEL frames for a level square.
+A level square is for example the square where your character stands.
+A square has a 64 x 32 pixels size (two 32 x 32 pixels frames from the lX.cel file).
+But a MIN graphics file does not only defines the pattern of the ground,
+it also defines anything built on this level square (e.g. a wall).
+The resulting image is called a sub-tile.
+Sub-tiles can either have a 64 x 160 pixels size (Dungeon, Catacombs, Caves, Nest, Crypt)
+or a 64 x 256  pixels size (Town and Hell).
 
 
-III.2) {SUB-TILE DATA}
-----------------------
+### III.1 File Structure
 
-	{CEL FRAME REFERENCE} * 10
-	
-	or
-	
-	{CEL FRAME REFERENCE} * 16
-	
-	Depending on the level number, the sub-tile consists of 
-	either 10 or 16 {CEL FRAME REFERENCE}.
-	Dungeon, Catacombs, Caves, Nest and Crypt feature 10 {CEL FRAME REFERENCE}.
-	Town and Hell feature 16 {CEL FRAME REFERENCE}.
-	Those references define the resulting sub-tile starting from top left
-	CEL frame and ending with bottom right CEL frame.
+{SUB-TILE DATA} * {NUMBER OF SUB-TILES}
 
+### III.2 `{SUB-TILE DATA}`
 
-III.3) {CEL FRAME REFERENCE}
-----------------------------
-	
-	{CEL FRAME TYPE} {INCREMENTED CEL FRAME INDEX}
+{CEL FRAME REFERENCE} * 10
 
-	A {CEL FRAME REFERENCE} is one WORD long (2 bytes).
-	The first 4 bits represent the {CEL FRAME TYPE}:
+or
 
-		0x0 : Type 0 level frame, see part IV.2.2.1 of the Diablo 1 CEL Graphics File Type Specification.
-		0x1 : Type 1 level frame, see part IV.2.2.2 of the Diablo 1 CEL Graphics File Type Specification.
-		0x2 : Type 2 level frame, see part IV.2.2.3 of the Diablo 1 CEL Graphics File Type Specification.
-		0x3 : Type 3 level frame, see part IV.2.2.3 of the Diablo 1 CEL Graphics File Type Specification.
-		0x4 : Type 4 level frame, see part IV.2.2.4 of the Diablo 1 CEL Graphics File Type Specification.
-		0x5 : Type 5 level frame, see part IV.2.2.4 of the Diablo 1 CEL Graphics File Type Specification.
-		0x6 to 0xF : Unused
-	
-	The last 12 bits represent the {INCREMENTED CEL FRAME INDEX}.
-	The real index in lX.cel CEL graphics file is obtained 
-	with the following formula: {CEL FRAME INDEX} = {INCREMENTED CEL FRAME INDEX} - 1.
-	When {INCREMENTED CEL FRAME INDEX} is equal to 0 no CEL frame is added
-	to the sub-tile, instead the 32 x 32 pixels area is transparent.
+{CEL FRAME REFERENCE} * 16
+
+Depending on the level number, the sub-tile consists of 
+either 10 or 16 {CEL FRAME REFERENCE}.
+Dungeon, Catacombs, Caves, Nest and Crypt feature 10 {CEL FRAME REFERENCE}.
+Town and Hell feature 16 {CEL FRAME REFERENCE}.
+Those references define the resulting sub-tile starting from top left
+CEL frame and ending with bottom right CEL frame.
 
 
-IV) TIL Graphics Files
-----------------------
+### III.3 `{CEL FRAME REFERENCE}`
 
-	Those files define layouts of 4 (2*2) sub-tiles (see part III).
-	The resulting image is called a tile.
-	
-	Tiles can have either a size of 128 x 192 pixels size 
-	(Dungeon, Catacombs, Caves, Nest and Crypt) 
-	or 128 x 288 pixels size (Town and Hell).
-	
-	Sub-tiles coordinates from top left corner of the tile, 
-	in pixels are:
-	
-	1rst sub-tile : ( 32, 0  )
-	2nd sub-tile  : ( 64, 16 )
-	3rd sub-tile  : ( 0,  16 )
-	4th sub-tile  : ( 32, 32 )
+{CEL FRAME TYPE} {INCREMENTED CEL FRAME INDEX}
 
+A {CEL FRAME REFERENCE} is one WORD long (2 bytes).
+The first 4 bits represent the {CEL FRAME TYPE}:
 
-IV.1) File Structure
---------------------
+- 0x0 : Type 0 level frame, see part IV.2.2.1 of the Diablo 1 CEL Graphics File Type Specification.
+- 0x1 : Type 1 level frame, see part IV.2.2.2 of the Diablo 1 CEL Graphics File Type Specification.
+- 0x2 : Type 2 level frame, see part IV.2.2.3 of the Diablo 1 CEL Graphics File Type Specification.
+- 0x3 : Type 3 level frame, see part IV.2.2.3 of the Diablo 1 CEL Graphics File Type Specification.
+- 0x4 : Type 4 level frame, see part IV.2.2.4 of the Diablo 1 CEL Graphics File Type Specification.
+- 0x5 : Type 5 level frame, see part IV.2.2.4 of the Diablo 1 CEL Graphics File Type Specification.
+- 0x6 to 0xF : Unused
 
-	{TILE DATA} * {NUMBER OF TILES}
+The last 12 bits represent the {INCREMENTED CEL FRAME INDEX}.
+The real index in lX.cel CEL graphics file is obtained 
+with the following formula: {CEL FRAME INDEX} = {INCREMENTED CEL FRAME INDEX} - 1.
+When {INCREMENTED CEL FRAME INDEX} is equal to 0 no CEL frame is added
+to the sub-tile, instead the 32 x 32 pixels area is transparent.
 
+## IV. TIL Graphics Files
 
-IV.2) {TILE DATA}
------------------
+Those files define layouts of 4 (2*2) sub-tiles (see part III).
+The resulting image is called a tile.
 
-	{SUB-TILE INDEX} * 4
-	
-	A {SUB-TILE INDEX} is one WORD long (2 bytes).
-	To obtain the real sub-tile index, add 1 to {SUB-TILE INDEX}.
-	
-	Those indices define the resulting tile starting from top left
-	sub-tile and ending with bottom right sub-tile.
+Tiles can have either a size of 128 x 192 pixels size 
+(Dungeon, Catacombs, Caves, Nest and Crypt) 
+or 128 x 288 pixels size (Town and Hell).
 
+Sub-tiles coordinates from top left corner of the tile, 
+in pixels are:
 
-V. Credits
-----------
+1rst sub-tile : ( 32, 0  )
+2nd sub-tile  : ( 64, 16 )
+3rd sub-tile  : ( 0,  16 )
+4th sub-tile  : ( 32, 32 )
 
-	Most of this document is based on the work of the following people:
+### IV.1 File Structure
 
-	Ulmo
-	Zamal & Zenda
+{TILE DATA} * {NUMBER OF TILES}
+
+### IV.2 `{TILE DATA}`
+
+{SUB-TILE INDEX} * 4
+
+A {SUB-TILE INDEX} is one WORD long (2 bytes).
+To obtain the real sub-tile index, add 1 to {SUB-TILE INDEX}.
+
+Those indices define the resulting tile starting from top left
+sub-tile and ending with bottom right sub-tile.
+
+## V. Credits
+
+Most of this document is based on the work of the following people:
+
+Ulmo
+Zamal & Zenda
