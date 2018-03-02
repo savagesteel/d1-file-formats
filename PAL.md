@@ -1,5 +1,4 @@
-# Diablo 1 PAL File Format
-# Color Palette
+# Diablo 1 PAL File Format - Color Palette
 
 ## I. Description
 
