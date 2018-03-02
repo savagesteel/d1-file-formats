@@ -203,62 +203,47 @@ Last line is not encoded, it consists of 32 transparent pixels.
 
 `DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 7
 
-IV.2.2.4  Type 4 and 5 frames (wall bottom) (0x320 bytes)
----------------------------------------------------------
+##### IV.2.2.4  Type 4 and 5 frames (wall bottom) (0x320 bytes)
 
-These frames consist of a lower part and an
-upper part, each with a 32 x 16 pixels size.
+These frames consist of a lower part and an upper part, each with a 32 x 16 pixels size.
 Type 4 frames have transparency on the left.
 Type 5 frames have transparency on the right.
 
-Lower part (0x120 bytes)
-~~~~~~~~~~~~~~~~~~~~~~~~
+**Lower part (`0x120` bytes)**
 
-The lower part of these 0x320 bytes frames is
-the same than the lower part of 0x220 bytes frames
+The lower part of these 0x320 bytes frames is the same than the lower part of type 2 and 3 frames
 (see part IV.2.2.3).
 
-
-Upper part (0x200 bytes)
-~~~~~~~~~~~~~~~~~~~~~~~~
+**Upper part (0x200 bytes)**
 
 The upper part does not have any transparency so they
 consist of 32*16 = 512 = 0x200 palette indices:
 
-{PALETTE INDEX} * 512	
+`{PALETTE INDEX} * 512`
 
-<## EXAMPLE
+**EXAMPLE**
 
-DIABDAT.MPQ:/levels/l1data/l1.cel, frame 11
-DIABDAT.MPQ:/levels/l1data/l1.cel, frame 19
+`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 11
+`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 19
 
-##>
+## V. Compiled CEL files
 
+Some CEL files are in fact a compilation of multiple CEL files, thus the header is as follows:
 
-V. Compiled CEL files
----------------------
+`{CEL OFFSET} * {NUMBER OF CEL}`
 
-Some CEL files are in fact a compilation of multiple CEL files,
-thus the header is as follows:
+After this header, at each {CEL OFFSET} comes a CEL file with the structure described in part II.
 
-{CEL OFFSET} * {NUMBER OF CEL}
+**EXAMPLE**
 
-After this header, at each {CEL OFFSET} comes a CEL file 
-with the structure described in part II.
-
-<## EXAMPLE
-
+```
 DIABDAT.MPQ:/towners/animals/cow.cel
 DIABDAT.MPQ:/towners/smith/smithw.cel
+```
 
-##>
-
-
-VI. Credits
------------
+## VI. Credits
 
 Most of this document is based on the work of the following people:
-
-Honi B
-ArthurDent
-Zamal & Zenda
+- Honi B
+- ArthurDent
+- Zamal & Zenda
