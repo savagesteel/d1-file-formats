@@ -16,7 +16,9 @@ Color palettes are used to render CEL/CL2 graphics.
 ## III. `{PALETTE COLOR}` (3 bytes)
 
 `{RED COMPONENT}`
+
 `{GREEN COMPONENT}`
+
 `{BLUE COMPONENT}`
 
 Each color is 3 bytes. First byte is the red color component,
