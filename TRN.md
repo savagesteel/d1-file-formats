@@ -2,12 +2,11 @@
 
 ## I. Description
 
-	Diablo 1 color palette translation files use the [ .trn ] file extension.
-	
-	A color palette translation file contains data to translate (i.e. replace) colors
-	from a given color palette file thus building a new variant of the color palette.
-	Color palette translation files enable rendering CEL/CL2 graphics with different 
-	color schemes without building a new full color palette file.  
+Diablo 1 color palette translation files use the `.trn` file extension.
+
+A color palette translation file contains data to translate (i.e. replace) colors from a given color palette file thus building a new variant of the color palette.
+
+Color palette translation files enable rendering CEL/CL2 graphics with different color schemes without building a new full color palette file.  
 
 
 ## II. File structure
