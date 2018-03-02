@@ -84,7 +84,7 @@ If `{ENCODING BYTE}` value is in the `[0x81, 0xFF]` range, then `256 - {ENCODING
 
 If `{ENCODING BYTE}` value is `0x7F`, then 127 (`0x7F`) palette indices follow, but the pixel line does not end, the next `{ENCODING BYTE}` will define pixels for the same pixel line. This is used to allow CEL frames with 128 pixels width or more.
 
-If {ENCODING BYTE} value is 0x80, then 128 (256 - 0x80) transparent pixels follow, but the pixel line does not end.
+If `{ENCODING BYTE}` value is `0x80`, then 128 (`256 - 0x80`) transparent pixels follow, but the pixel line does not end.
 
 Pixel groups are wrapped at the end of each pixel line, meaning that one pixel group can't overlap multiple lines.
 
@@ -94,8 +94,7 @@ The fact that pixel groups are wrapped at the end of each line allows to calcula
 
 **NOTE**
 
-When a CEL/CL2 graphics file refers to a palette color, 
-it uses a one byte `{PALETTE INDEX}` in the `[0x00, 0xFF]` range.
+When a CEL/CL2 graphics file refers to a palette color, it uses a one byte `{PALETTE INDEX}` in the `[0x00, 0xFF]` range.
 This index refers to the `{PALETTE INDEX}`th color in the color palette.
 To find the corresponding `{COLOR PALETTE OFFSET}` in the color palette file, use the following formula:
 
