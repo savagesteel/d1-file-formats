@@ -10,7 +10,7 @@ Color palettes are sets of 256 colors used to render CEL/CL2 graphics.
 
 `{PALETTE COLOR} * 256`
 
-**The first half of the palette depends on the level palette ??**
+*The first half of the palette depends on the level palette ??*
 
 ## III. `{PALETTE COLOR}` (3 bytes)
 
