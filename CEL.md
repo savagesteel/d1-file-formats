@@ -4,9 +4,7 @@
 
 Diablo 1 CEL graphics files use the `.cel` file extension.
 
-CEL graphics files contain one or more frames (images).
-
-A CEL graphics file needs a [color palette](PAL.md) file to be rendered.
+CEL graphics files contain one or more frames (images). A CEL graphics file needs a [color palette](PAL.md) file to be rendered.
 
 CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian byte order.
 
@@ -17,19 +15,19 @@ CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian b
 {CEL FRAME} * {NUMBER OF CEL FRAMES}
 ```
 
+## III. `{CEL HEADER}`
 
-III) {CEL HEADER}
------------------
+```
+{NUMBER OF CEL FRAMES}
+{CEL FRAME OFFSET} * {NUMBER OF CEL FRAMES}
+{CEL FILE SIZE}
+```
 
-	{NUMBER OF CEL FRAMES}
-	{CEL FRAME OFFSET} * {NUMBER OF CEL FRAMES}
-	{CEL FILE SIZE}
-	
-	The {NUMBER OF CEL FRAMES} is one DWORD long.
-	Then there is one DWORD for each frame of the CEL graphics file,
-	each indicating the {CEL FRAME OFFSET} where the frame data begins.
-	After the CEL frame offsets, comes one last DWORD containing the
-	CEL graphics file size.
+The `{NUMBER OF CEL FRAMES}` is one DWORD long.
+
+Then there is one DWORD for each frame of the CEL graphics file, each indicating the {CEL FRAME OFFSET} where the frame data begins.
+
+After the CEL frame offsets, comes one last DWORD containing the CEL graphics file size.
 
 
 IV) {CEL FRAME}
