@@ -211,7 +211,7 @@ Type 5 frames have transparency on the right.
 
 **Lower part (`0x120` bytes)**
 
-The lower part of these 0x320 bytes frames is the same than the lower part of type 2 and 3 frames
+The lower part of these `0x320` bytes frames is the same than the lower part of type 2 and 3 frames
 (see part IV.2.2.3).
 
 **Upper part (`0x200` bytes)**
