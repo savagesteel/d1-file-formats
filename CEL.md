@@ -10,12 +10,12 @@ CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian b
 
 ## II. File structure
 
-
-[{CEL HEADER}](III.-{CEL-HEADER})
+```
+{CEL HEADER}
 {CEL FRAME} * {NUMBER OF CEL FRAMES}
+```
 
-
-## III. {CEL HEADER}
+## III. `{CEL HEADER}`
 
 ```
 {NUMBER OF CEL FRAMES}
