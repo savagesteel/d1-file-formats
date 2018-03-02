@@ -102,9 +102,11 @@ To find the corresponding `{COLOR PALETTE OFFSET}` in the color palette file, us
 
 **EXAMPLE**
 
+```
 DIABDAT.MPQ:/ctrlpan/panel8.cel
 DIABDAT.MPQ:/ctrlpan/spelicon.cel
 DIABDAT.MPQ:/data/inv/objcurs.cel
+```
 
 IV.2.2 Level CEL files
 ----------------------
