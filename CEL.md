@@ -29,14 +29,12 @@ Then there is one DWORD for each frame of the CEL graphics file, each indicating
 
 After the CEL frame offsets, comes one last DWORD containing the CEL graphics file size.
 
-
 ## IV. `{CEL FRAME}`
 
 ```
 [{CEL FRAME HEADER}]
 {CEL FRAME DATA}
 ```
-
 
 ### IV.1 `{CEL FRAME HEADER}`
 
@@ -65,64 +63,49 @@ There are two types of CEL graphics files : regular CEL files and level CEL file
 These types share the same `{CEL HEADER}` structure described in part III of this document.
 Depending on the CEL type, they feature `{CEL FRAME HEADER}`s or not, and their pixel data is not always encoded the same way.
 
-IV.2.1 Regular CEL files
-------------------------
+#### IV.2.1 Regular CEL files
 	
-Regular CEL files have one or more {CEL FRAME}.
-Regular CEL files optionally feature {CEL FRAME HEADER}s.
-Single frame CEL files do not feature a {CEL FRAME HEADER}.
+Regular CEL files have one or more `{CEL FRAME}`.
+Regular CEL files optionally feature `{CEL FRAME HEADER}`s.
+Single frame CEL files do not feature a `{CEL FRAME HEADER}`.
 
 Regular CEL files have frames encoded with the regular CEL pixel encoding.
 Regular CEL pixel encoding defines pixel groups by using the following data structure:
 
+```
 {ENCODING BYTE}
 [{PALETTE INDEX} * {PIXEL NUMBER}]
+```
 
-If {ENCODING BYTE} value is in the [0x00, 0x7E] range,
-then a number of {ENCODING BYTE} palette indices follow (see NOTE).
+If `{ENCODING BYTE}` value is in the `[0x00, 0x7E]` range, then a number of `{ENCODING BYTE}` palette indices follow (see NOTE).
 Each palette index defines the color of one pixel of the pixel line.
 
-If {ENCODING BYTE} value is in the [0x81, 0xFF] range,
-then 256 - {ENCODING BYTE} transparent pixels are added to the pixel line.
+If `{ENCODING BYTE}` value is in the `[0x81, 0xFF]` range, then `256 - {ENCODING BYTE}` transparent pixels are added to the pixel line.
 
-If {ENCODING BYTE} value is 0x7F, then 127 (0x7F) palette indices follow,
-but the pixel line does not end, the next {ENCODING BYTE} will define
-pixels for the same pixel line. This is used to allow CEL frames 
-with 128 pixels width or more.
+If `{ENCODING BYTE}` value is `0x7F`, then 127 (`0x7F`) palette indices follow, but the pixel line does not end, the next `{ENCODING BYTE}` will define pixels for the same pixel line. This is used to allow CEL frames with 128 pixels width or more.
 
-If {ENCODING BYTE} value is 0x80, then 128 (256 - 0x80) transparent pixels follow,
-but the pixel line does not end.
+If {ENCODING BYTE} value is 0x80, then 128 (256 - 0x80) transparent pixels follow, but the pixel line does not end.
 
-Pixel groups are wrapped at the end of each pixel line,
-meaning that one pixel group can't overlap multiple lines.
+Pixel groups are wrapped at the end of each pixel line, meaning that one pixel group can't overlap multiple lines.
 
-<## NOTE
+**NOTE**
 
-The fact that pixel groups are wrapped at the end of each line allows
-to calculate the width of {CEL FRAMES} which do not feature {CEL FRAME HEADERS}.  
+The fact that pixel groups are wrapped at the end of each line allows to calculate the width of `{CEL FRAMES}` which do not feature `{CEL FRAME HEADERS}`.
 
-##>
-
-<## NOTE
+**NOTE**
 
 When a CEL/CL2 graphics file refers to a palette color, 
-it uses a one byte {PALETTE INDEX} in the [0x00, 0xFF] range.
-This index refers to the {PALETTE INDEX}th color in the color palette.
-To find the corresponding {COLOR PALETTE OFFSET} 
-in the color palette file, use the following formula:
+it uses a one byte `{PALETTE INDEX}` in the `[0x00, 0xFF]` range.
+This index refers to the `{PALETTE INDEX}`th color in the color palette.
+To find the corresponding `{COLOR PALETTE OFFSET}` in the color palette file, use the following formula:
 
-{COLOR PALETTE OFFSET} = 3 * {PALETTE INDEX}
+`{COLOR PALETTE OFFSET} = 3 * {PALETTE INDEX}`
 
-##>
-
-<## EXAMPLE
+**EXAMPLE**
 
 DIABDAT.MPQ:/ctrlpan/panel8.cel
 DIABDAT.MPQ:/ctrlpan/spelicon.cel
 DIABDAT.MPQ:/data/inv/objcurs.cel
-
-##>
-
 
 IV.2.2 Level CEL files
 ----------------------
