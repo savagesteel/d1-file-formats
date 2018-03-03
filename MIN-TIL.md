@@ -74,89 +74,80 @@ Level graphics files are named as follows:
 
 Those files contain the layout of CEL frames for a level square.
 A level square is for example the square where your character stands.
-A square has a 64 x 32 pixels size (two 32 x 32 pixels frames from the lX.cel file).
-But a MIN graphics file does not only defines the pattern of the ground,
-it also defines anything built on this level square (e.g. a wall).
+A square has a 64 x 32 pixels size (two 32 x 32 pixels frames from the `lX.cel` file).
+But a MIN graphics file does not only defines the pattern of the ground, it also defines anything built on this level square (e.g. a wall).
 The resulting image is called a sub-tile.
-Sub-tiles can either have a 64 x 160 pixels size (Dungeon, Catacombs, Caves, Nest, Crypt)
-or a 64 x 256  pixels size (Town and Hell).
-
+Sub-tiles can either have a 64 x 160 pixels size (Dungeon, Catacombs, Caves, Nest, Crypt) or a 64 x 256  pixels size (Town and Hell).
 
 ### III.1 File Structure
 
-{SUB-TILE DATA} * {NUMBER OF SUB-TILES}
+`{SUB-TILE DATA} * {NUMBER OF SUB-TILES}`
 
 ### III.2 `{SUB-TILE DATA}`
 
-{CEL FRAME REFERENCE} * 10
+`{CEL FRAME REFERENCE} * 10`
 
 or
 
-{CEL FRAME REFERENCE} * 16
+`{CEL FRAME REFERENCE} * 16`
 
-Depending on the level number, the sub-tile consists of 
-either 10 or 16 {CEL FRAME REFERENCE}.
-Dungeon, Catacombs, Caves, Nest and Crypt feature 10 {CEL FRAME REFERENCE}.
-Town and Hell feature 16 {CEL FRAME REFERENCE}.
-Those references define the resulting sub-tile starting from top left
-CEL frame and ending with bottom right CEL frame.
-
+Depending on the level number, the sub-tile consists of either 10 or 16 `{CEL FRAME REFERENCE}`.
+Dungeon, Catacombs, Caves, Nest and Crypt feature 10 `{CEL FRAME REFERENCE}`.
+Town and Hell feature 16 `{CEL FRAME REFERENCE}`.
+Those references define the resulting sub-tile starting from top left CEL frame and ending with bottom right CEL frame.
 
 ### III.3 `{CEL FRAME REFERENCE}`
 
-{CEL FRAME TYPE} {INCREMENTED CEL FRAME INDEX}
+`{CEL FRAME TYPE} {INCREMENTED CEL FRAME INDEX}`
 
-A {CEL FRAME REFERENCE} is one WORD long (2 bytes).
-The first 4 bits represent the {CEL FRAME TYPE}:
+A `{CEL FRAME REFERENCE}` is one WORD long (2 bytes).
+The first 4 bits represent the `{CEL FRAME TYPE}`:
 
-- 0x0 : Type 0 level frame, see part IV.2.2.1 of the Diablo 1 CEL Graphics File Type Specification.
-- 0x1 : Type 1 level frame, see part IV.2.2.2 of the Diablo 1 CEL Graphics File Type Specification.
-- 0x2 : Type 2 level frame, see part IV.2.2.3 of the Diablo 1 CEL Graphics File Type Specification.
-- 0x3 : Type 3 level frame, see part IV.2.2.3 of the Diablo 1 CEL Graphics File Type Specification.
-- 0x4 : Type 4 level frame, see part IV.2.2.4 of the Diablo 1 CEL Graphics File Type Specification.
-- 0x5 : Type 5 level frame, see part IV.2.2.4 of the Diablo 1 CEL Graphics File Type Specification.
-- 0x6 to 0xF : Unused
+- `0x0` : Type 0 level frame, see part IV.2.2.1 of the [CEL graphics](CEL.md) file format specification).
+- `0x1` : Type 1 level frame, see part IV.2.2.2 of the [CEL graphics](CEL.md) file format specification).
+- `0x2` : Type 2 level frame, see part IV.2.2.3 of the [CEL graphics](CEL.md) file format specification).
+- `0x3` : Type 3 level frame, see part IV.2.2.3 of the [CEL graphics](CEL.md) file format specification).
+- `0x4` : Type 4 level frame, see part IV.2.2.4 of the [CEL graphics](CEL.md) file format specification).
+- `0x5` : Type 5 level frame, see part IV.2.2.4 of the [CEL graphics](CEL.md) file format specification).
+- `0x6` to `0xF` : Unused
 
-The last 12 bits represent the {INCREMENTED CEL FRAME INDEX}.
-The real index in lX.cel CEL graphics file is obtained 
-with the following formula: {CEL FRAME INDEX} = {INCREMENTED CEL FRAME INDEX} - 1.
-When {INCREMENTED CEL FRAME INDEX} is equal to 0 no CEL frame is added
-to the sub-tile, instead the 32 x 32 pixels area is transparent.
+The last 12 bits represent the `{INCREMENTED CEL FRAME INDEX}`.
+The real index in `lX.cel` CEL graphics file is obtained with the following formula:
+
+`{CEL FRAME INDEX} = {INCREMENTED CEL FRAME INDEX} - 1`
+
+When `{INCREMENTED CEL FRAME INDEX}` is equal to 0 no CEL frame is added to the sub-tile, instead the 32 x 32 pixels area is transparent.
 
 ## IV. TIL Graphics Files
 
-Those files define layouts of 4 (2*2) sub-tiles (see part III).
+Those files define layouts of 4 (`2*2`) sub-tiles (see part III).
 The resulting image is called a tile.
 
-Tiles can have either a size of 128 x 192 pixels size 
-(Dungeon, Catacombs, Caves, Nest and Crypt) 
-or 128 x 288 pixels size (Town and Hell).
+Tiles can have either a size of 128 x 192 pixels size (Dungeon, Catacombs, Caves, Nest and Crypt) or 128 x 288 pixels size (Town and Hell).
 
 Sub-tiles coordinates from top left corner of the tile, 
 in pixels are:
 
-1rst sub-tile : ( 32, 0  )
-2nd sub-tile  : ( 64, 16 )
-3rd sub-tile  : ( 0,  16 )
-4th sub-tile  : ( 32, 32 )
+1rst sub-tile : `(32, 0)`
+2nd sub-tile  : `(64, 16)`
+3rd sub-tile  : `(0,  16)`
+4th sub-tile  : `(32, 32)`
 
 ### IV.1 File Structure
 
-{TILE DATA} * {NUMBER OF TILES}
+`{TILE DATA} * {NUMBER OF TILES}`
 
 ### IV.2 `{TILE DATA}`
 
-{SUB-TILE INDEX} * 4
+`{SUB-TILE INDEX} * 4`
 
-A {SUB-TILE INDEX} is one WORD long (2 bytes).
-To obtain the real sub-tile index, add 1 to {SUB-TILE INDEX}.
+A `{SUB-TILE INDEX}` is one WORD long (2 bytes).
+To obtain the real sub-tile index, add 1 to `{SUB-TILE INDEX}`.
 
-Those indices define the resulting tile starting from top left
-sub-tile and ending with bottom right sub-tile.
+Those indices define the resulting tile starting from top left sub-tile and ending with bottom right sub-tile.
 
 ## V. Credits
 
 Most of this document is based on the work of the following people:
-
-Ulmo
-Zamal & Zenda
+- Ulmo
+- Zamal & Zenda
