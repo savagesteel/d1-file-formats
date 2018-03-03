@@ -25,17 +25,16 @@ and `NLevels/lXdata` for Hellfire, where `X` is:
 
 Level CEL graphics files are named as follows:
 
-- lX.cel
+- `lX.cel`
 
-Those files contains 32x32 pixels frames (as described in part IV.2.2
-of the CEL Graphics File Type Specification).
+Those files contains 32x32 pixels frames (as described in part IV.2.2 of the [CEL graphics](CEL.md) file format specification).
 
 In addition the following CEL graphics files are used to store archs graphics:
 
-- l1s.cel
-- l2s.cel
-- l5s
-- towns.cel 
+- `l1s.cel`
+- `l2s.cel`
+- `l5s`
+- `towns.cel`
 
 Those files contains eight 64 x 160 pixels frames.
 
@@ -43,36 +42,33 @@ Those files contains eight 64 x 160 pixels frames.
 
 Level color palettes are named as follows:
 
-- lX.pal
-- lX_N.pal with N an integer in the [1,5] range
-- lXpalg.pal
-- l3_w.pal
-- l3pfoul.pal
-- l3pwater.pal
-- l3_i.pal
+- `lX.pal`
+- `lX_N.pal` with `N` an integer in the `[1,5]` range
+- `lXpalg.pal`
+- `l3_w.pal`
+- `l3pfoul.pal`
+- `l3pwater.pal`
+- `l3_i.pal`
 
-lX.pal and lX_1.pal are identical.
+`lX.pal` and `lX_1.pal` are identical.
 
-lX_N.pal files are used for alternative color schemes.
-The Crypt do not use alternative color schemes, only l5.pal exists.
+`lX_N.pal` files are used for alternative color schemes.
+The Crypt do not use alternative color schemes, only `l5.pal` exists.
 
-lXpalg.pal files are used to display levels in grayscale color scheme.
+`lXpalg.pal` files are used to display levels in grayscale color scheme.
 
-l3_w.pal and l3pwater.pal are identical.
-l3pfoul.pal and l3pwater.pal are used for the Poisoned Water Supply level,
-l3pfoul.pal is used to display poisoned yellow water and
-l3pwater.pal is used to display clean blue water.
+`l3_w.pal` and `l3pwater.pal` are identical.
+`l3pfoul.pal` and `l3pwater.pal` are used for the Poisoned Water Supply level,
+`l3pfoul.pal` is used to display poisoned yellow water and `l3pwater.pal` is used to display clean blue water.
 
-l3_i.pal is an unused color palette which can display caves with an iced look, i.e.
-the magma looks like frozen water and the rocks have a blue/ice color scheme.
+`l3_i.pal` is an unused color palette which can display caves with an iced look, i.e. the magma looks like frozen water and the rocks have a blue/ice color scheme.
 
 ### II.3 MIN and TIL Level Graphics Files
 
 Level graphics files are named as follows:
 
-- lX.min
-- lX.til
-
+- `lX.min`
+- `lX.til`
 
 ## III. MIN Graphics Files
 
