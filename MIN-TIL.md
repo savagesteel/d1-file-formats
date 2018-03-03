@@ -125,13 +125,12 @@ The resulting image is called a tile.
 
 Tiles can have either a size of 128 x 192 pixels size (Dungeon, Catacombs, Caves, Nest and Crypt) or 128 x 288 pixels size (Town and Hell).
 
-Sub-tiles coordinates from top left corner of the tile, 
-in pixels are:
+Sub-tiles coordinates from top left corner of the tile, in pixels are:
 
-1rst sub-tile : `(32, 0)`
-2nd sub-tile  : `(64, 16)`
-3rd sub-tile  : `(0,  16)`
-4th sub-tile  : `(32, 32)`
+- 1rst sub-tile : `(32, 0)`
+- 2nd sub-tile  : `(64, 16)`
+- 3rd sub-tile  : `(0,  16)`
+- 4th sub-tile  : `(32, 32)`
 
 ### IV.1 File Structure
 
