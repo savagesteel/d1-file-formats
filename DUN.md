@@ -15,7 +15,7 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 {MAP LAYERS}
 ```
 
-## III. {DUN HEADER}
+## III. `{DUN HEADER}`
 
 ```
 {MAP WIDTH}
@@ -24,7 +24,7 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 
 `{MAP WIDTH}` and `{MAP HEIGHT}` are both one WORD long (2 bytes).
 
-## IV. {MAP LAYERS}
+## IV. `{MAP LAYERS}`
 
 ```
 {BASE LAYER}
