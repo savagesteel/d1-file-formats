@@ -2,9 +2,11 @@
 
 ## I. Description
 
-TODO: Write description here
+Diablo 1 DUN level maps use the `.dun` file extension.
+The DUN level maps contain portions of levels used by the random level generation algorithm.
+Some of these files contain generic level layouts, other contain quest specific level layouts.
 
-Level graphics data longer than one byte (WORDs and DWORDs)	is stored using little-endian byte order.
+Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-endian byte order.
 
 ## II. File Structure
 
