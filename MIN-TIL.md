@@ -2,16 +2,11 @@
 
 ## I. Description
 
-Diablo 1 level graphics depend on several files, first it depends
-on specific CEL graphics files and color palettes which contain 
-the actual pixel data in the form of small 32 x 32 pixels frames. 
-Secondly it relies on sub-tiles with [ .min ] file extension and 
-tiles with [ .til ] file extension. Tiles and sub-tiles define
-layouts of 32 x 32 pixels frames which result in larger frames
-representing level parts.
+Diablo 1 level graphics depend on several files, first it depends on specific [CEL graphics](CEL.md) files and [color palettes](PAL.md) which contain the actual pixel data in the form of small 32 x 32 pixels frames. 
+Secondly it relies on sub-tiles with `.min` file extension and tiles with `.til` file extension. Tiles and sub-tiles define
+layouts of 32 x 32 pixels frames which result in larger frames representing level parts.
 
-Level graphics data longer than one byte (WORDs and DWORDs)
-is stored using little-endian byte order.
+Level graphics data longer than one byte (WORDs and DWORDs) is stored using little-endian byte order.
 
 ## II. File Naming
 
