@@ -10,16 +10,16 @@ Level graphics data longer than one byte (WORDs and DWORDs) is stored using litt
 
 ## II. File Naming
 
-The level files are in levels/lXdata folders for Diablo
-and NLevels/lXdata for Hellfire, where X is:
+The level files are in `levels/lXdata` folders for Diablo
+and `NLevels/lXdata` for Hellfire, where `X` is:
 
-* 1 for Dungeon
-* 2 for Catacombs
-* 3 for Caves
-* 4 for Hell
-* 5 for Crypt
-* 6 for Nest
-* town for Tristram
+- `1` for Dungeon
+- `2` for Catacombs
+- `3` for Caves
+- `4` for Hell
+- `5` for Crypt (Hellfire)
+- `6` for Nest (Hellfire)
+- `town` for Tristram
 
 ### II.1 CEL Graphics Files
 
