@@ -9,11 +9,12 @@ The `.DIR` file contains metadata and the `.BIN` file contains the actual data.
 
 ```
 {MAGIC NUMBER}
-{BLOCK SIZE}?
+{NUMBER OF FILES}
 {FILE ENTRY METADATA} * {NUMBER OF FILES}
 ```
 
-TODO: Magic number, block size
+`{MAGIC NUMBER}` is one DWORD which always has hex value `0x4C444952` (`LDIR` in ASCII).  
+`{NUMBER OF FILES}` is one little-endian DWORD representing the number of files in the archive.
 
 
 ### 2.1 `{FILE ENTRY METADATA}`
