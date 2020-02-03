@@ -18,7 +18,8 @@ Each color translation is associated to the color with the same index in the col
 
 If the color translation value `{COLOR TRANSLATION}` is equal to its offset `{COLOR TRANSLATION OFFSET}` then the color is not translated. Thus the following data is a null color palette translation file which does not modify the source color palette file at all:
 
-```00 01 02 03 04 05 06 07
+```
+00 01 02 03 04 05 06 07
 08 09 0A 0B 0C 0D 0E 0F
 10 11 12 13 14 15 16 17
 18 19 1A 1B 1C 1D 1E 1F
