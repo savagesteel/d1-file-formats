@@ -44,4 +44,4 @@ The `.BIN` file stores file data in blocks of ??? bytes.
 ```
 
 `{SUM32 CHECKSUM}` is one little-endian DWORD containing the Sum32 checksum of the file.  
-`{FILE DATA}` is the actual file data with a length of `{FILE SIZE}` plus some blank space filled with `0x00` up to the `{BLOCK SIZE}` (cf. 2.).
+`{FILE DATA}` is the actual file data with a length of `{FILE SIZE}` plus some blank space filled with `0x00` up to the block size.
