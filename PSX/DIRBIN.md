@@ -9,12 +9,12 @@ The `.DIR` file contains metadata and the `.BIN` file contains the actual data.
 
 ```
 {MAGIC NUMBER}
-{BLOCK SIZE}?
-{FILE ENTRY METADATA} * {NUMBER OF FILES}
+{FILE COUNT}
+{FILE ENTRY METADATA} * {FILE COUNT}
 ```
 
-TODO: Magic number, block size
-
+`{MAGIC NUMBER}` is one DWORD with value `0x4C444952` (`LDIR` in ASCII).  
+`{FILE COUNT}` is one little-endian DWORD representing the number of files in the archive.
 
 ### 2.1 `{FILE ENTRY METADATA}`
 
@@ -33,7 +33,7 @@ TODO: Magic number, block size
 ```
 {FILE ENTRY} * {NUMBER OF FILES}
 ```
-The `.BIN` file stores file data in blocks of `{BLOCK SIZE}` (cf. 2.).
+The `.BIN` file stores file data in blocks of ??? bytes.
 
 ### 3.1 `{FILE ENTRY}`
 
