@@ -15,6 +15,6 @@ Most of the knowledge here comes from the Diablo 1 and Hellfire modding communit
 
 ## PlayStation
 
-- [Diablo 1 DIR/BIN File Format - Archive](PSX/DIRBIN.md)
+- [Diablo 1 DIR/BIN File Format - Archives](PSX/DIRBIN.md)
 
 *Work in progress: MPQ, SOL, AMP, PlayStation version formats*
