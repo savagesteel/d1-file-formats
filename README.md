@@ -4,11 +4,17 @@ The goal of this project is to provide precise specifications for Diablo 1 (and 
 
 Most of the knowledge here comes from the Diablo 1 and Hellfire modding community.
 
-- [Diablo 1 PAL File Format - Color Palettes](PAL.md)
-- [Diablo 1 TRN File Format - Color Palette Translations](TRN.md)
-- [Diablo 1 CEL File Format - Graphics](CEL.md)
-- [Diablo 1 CL2 File Format - Graphics](CL2.md)
-- [Diablo 1 MIN and TIL File Formats - Level Graphics](MIN-TIL.md)
-- [Diablo 1 DUN File Format - Level Maps](DUN.md)
+## PC-Mac
+
+- [Diablo 1 PAL File Format - Color Palettes](PC-Mac/PAL.md)
+- [Diablo 1 TRN File Format - Color Palette Translations](PC-Mac/TRN.md)
+- [Diablo 1 CEL File Format - Graphics](PC-Mac/CEL.md)
+- [Diablo 1 CL2 File Format - Graphics](PC-Mac/CL2.md)
+- [Diablo 1 MIN and TIL File Formats - Level Graphics](PC-Mac/MIN-TIL.md)
+- [Diablo 1 DUN File Format - Level Maps](PC-Mac/DUN.md)
+
+## PlayStation
+
+- [Diablo 1 DIR/BIN File Format - Archive](PSX/DIRBIN.md)
 
 *Work in progress: MPQ, SOL, AMP, PlayStation version formats*

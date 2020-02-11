@@ -1,4 +1,4 @@
-# Diablo 1 PlayStation Archive File Format
+# Diablo 1 DIR/BIN File Format - Archive
 
 ## 1. Description
 
