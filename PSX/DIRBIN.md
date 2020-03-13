@@ -1,5 +1,16 @@
 # Diablo 1 DIR/BIN File Format - Archives
 
+[1. Description](#1-description)  
+[2. DIR file structure]()  
+[2.1 `{FILE ENTRY METADATA}`]()  
+[3. BIN file structure]()  
+[3.1 `{FILE ENTRY}`]()  
+[3.2 `{VAG FILE ENTRY}`]()  
+[3.2.1 `{VAG BLOCK HEADER}`]()  
+[3.2.2 `{VAG FILE DATA}`]()  
+[4. Credits](#4-credits)  
+
+
 ## 1. Description
 
 Diablo 1 PlayStation archives use the `.DIR` and `.BIN` file extensions (e.g. LUMP.DIR, LUMP.BIN).  
@@ -96,3 +107,8 @@ The VAG audio data is stored as mono (1 channel) raw compressed ADPCM.
 The sampling frequency of the VAG files is either 8000 or 11025 Hz.  
 
 The size of `{VAG FILE DATA}` is `{VAG BLOCK HEADER}.{BLOCK SIZE} - 0x80`.
+
+
+## 4. Credits
+
+Part 3.2 of this document is based on the work of [@galaxyhaxz](https://github.com/galaxyhaxz).
