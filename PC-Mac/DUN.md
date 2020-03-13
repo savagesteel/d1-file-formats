@@ -4,7 +4,7 @@
 [2. File structure](#2-file-structure)  
 [3. `{DUN HEADER}`](#3-dun-header)  
 [4. `{MAP LAYERS}`](#4-map-layers)  
-[4.1 {BASE LAYER}](#41-base-layer)  
+[4.1 `{BASE LAYER}`](#41-base-layer)  
 [4.2 `{ITEMS LAYER}`](#42-items-layer)  
 [4.3 `{MONSTERS LAYER}`](#43-monsters-layer)  
 [4.4 `{OBJECTS LAYER}`](#44-objects-layer)  
@@ -51,7 +51,7 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 ```
 
 
-### 4.1 {BASE LAYER}
+### 4.1 `{BASE LAYER}`
 
 ```
 {INCREMENTED TILE INDEX} * {MAP WIDTH} * {MAP HEIGHT}
