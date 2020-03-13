@@ -2,14 +2,14 @@
 
 [1. Description](#1-description)  
 [2. File structure](#2-file-structure)  
-[3. `{DUN HEADER}`]()  
-[4. `{MAP LAYERS}`]()  
-[4.1 {BASE LAYER}]()  
-[4.2 `{ITEMS LAYER}`]()  
-[4.3 `{MONSTERS LAYER}`]()  
-[4.4 `{OBJECTS LAYER}`]()  
-[4.5 `{UNUSED LAYER}`]()  
-[5. Executable Hardcoded DUN Level Maps]()  
+[3. `{DUN HEADER}`](#3-dun-header)  
+[4. `{MAP LAYERS}`](#4-map-layers)  
+[4.1 {BASE LAYER}](#41-base-layer)  
+[4.2 `{ITEMS LAYER}`](#42-items-layer)  
+[4.3 `{MONSTERS LAYER}`](#43-monsters-layer)  
+[4.4 `{OBJECTS LAYER}`](#44-objects-layer)  
+[4.5 `{UNUSED LAYER}`](#45-unused-layer)  
+[5. Executable Hardcoded DUN Level Maps](#5-executable-hardcoded-dun-level-maps)  
 [6. Credits](#6-credits)
 
 
