@@ -1,20 +1,24 @@
 # Diablo 1 TRN File Format - Color Palette Translations
 
-## I. Description
-
-Diablo 1 color palette translation files use the `.trn` file extension.
-
-A color palette translation file contains data to translate (i.e. replace) colors from a given color palette file thus building a new variant of the color palette.
-
-Color palette translation files allow rendering CEL/CL2 graphics with different color schemes without building a new full color palette file.  
+[1. Description](#1-description)  
+[2. File structure](#2-file-structure)  
 
 
-## II. File structure
+## 1. Description
 
-`{COLOR TRANSLATION} * 256`
+Diablo 1 color palette translation files use the `.trn` file extension.  
+A color palette translation file contains data to translate (i.e. replace) colors from a given color palette file thus building a new variant of the color palette.  
+Color palette translation files allow rendering CEL/CL2 graphics with different color schemes without building a new full color palette file.
 
-Each color translation is one byte.
-Each color translation is associated to the color with the same index in the color palette file.
+
+## 2. File structure
+
+```
+{COLOR TRANSLATION} * 256
+```
+
+Each color translation is one byte.  
+Each color translation is associated to the color with the same index in the color palette file.  
 
 If the color translation value `{COLOR TRANSLATION}` is equal to its offset `{COLOR TRANSLATION OFFSET}` then the color is not translated. Thus the following data is a null color palette translation file which does not modify the source color palette file at all:
 
@@ -53,7 +57,6 @@ F0 F1 F2 F3 F4 F5 F6 F7
 F8 F9 FA FB FC FD FE FF
 ```
 
-If the color translation value `{COLOR TRANSLATION}` is different from its 
-offset `{COLOR TRANSLATION OFFSET}`, then the color with the `{COLOR TRANSLATION OFFSET}` index in the color palette is replaced by the color with the `{COLOR TRANSLATION}` index in the color palette.
+If the color translation value `{COLOR TRANSLATION}` is different from its offset `{COLOR TRANSLATION OFFSET}`, then the color with the `{COLOR TRANSLATION OFFSET}` index in the color palette is replaced by the color with the `{COLOR TRANSLATION}` index in the color palette.
 
-For instance, if the color translation value at offset `0x10` is `0x03`, the color with index `0x10` (11th color of the palette) will be replaced by the color with index `0x03` (4th color of the palette).
+For example, if the color translation value at offset `0x10` is `0x03`, the color with index `0x10` (11th color of the palette) will be replaced by the color with index `0x03` (4th color of the palette).
