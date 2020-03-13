@@ -2,13 +2,13 @@
 
 [1. Description](#1-description)  
 [2. File structure](#2-file-structure)  
-[3. `{CL2 HEADER}`]()  
-[3.1 `{CL2 GROUP HEADER}`]()  
-[3.2 `{CL2 CLIP HEADER}`]()  
-[4. `{CL2 FRAME}`]()  
-[4.1 `{CL2 FRAME HEADER}`]()  
-[4.2 `{CL2 FRAME DATA}`]()  
-[5. Credits](#6-credits)  
+[3. `{CL2 HEADER}`](#3-cl2-header)  
+[3.1 `{CL2 GROUP HEADER}`](#31-cl2-group-header)  
+[3.2 `{CL2 CLIP HEADER}`](#32-cl2-clip-header)  
+[4. `{CL2 FRAME}`](#4-cl2-frame)  
+[4.1 `{CL2 FRAME HEADER}`](#41-cl2-frame-header)  
+[4.2 `{CL2 FRAME DATA}`](#42-cl2-frame-data)  
+[5. Credits](#5-credits)  
 
 
 ## 1. Description
