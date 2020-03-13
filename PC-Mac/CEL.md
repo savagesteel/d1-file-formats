@@ -153,9 +153,10 @@ These frames do not have any transparency so they consist of `32*32 = 1024 = 0x4
 DIABDAT.MPQ:/levels/l1data/l1.cel, frame 2
 ```
 
+
 ##### 4.2.2.2 Type 1 frames
 
-Type 1 frames use the regular CEL encoding (see part 4.2.1).
+Type 1 frames use the regular CEL encoding (see [part 4.2.1](#421-regular-cel-files)  ).
 They do not have a constant size.
 
 
@@ -192,7 +193,6 @@ or if the transparent part is on the right part of the frame:
 If the special byte sequence `{0x00,0x00}` comes before the palette indices then the lines start with transparent pixels.  
 If the special byte sequence `{0x00,0x00}` comes after the palette indices then the lines ends with transparent pixels.
 
-
 **Upper part (`0x100` bytes)**
 
 The first line of the upper part consists of 30 opaque pixels and 2 transparent pixels, the second line of 28 opaque pixels and 4 transparent pixels and so on.
@@ -224,6 +224,7 @@ DIABDAT.MPQ:/levels/l1data/l1.cel, frame 6
 DIABDAT.MPQ:/levels/l1data/l1.cel, frame 7
 ```
 
+
 ##### 4.2.2.4 Type 4 and 5 frames (wall bottom) (`0x320` bytes)
 
 These frames consist of a lower part and an upper part, each with a 32 x 16 pixels size.  
@@ -232,7 +233,8 @@ Type 5 frames have transparency on the right.
 
 **Lower part (`0x120` bytes)**  
 The lower part of these `0x320` bytes frames is the same than the lower part of type 2 and 3 frames
-(see part 4.2.2.3).
+(see [part 4.2.2.3](#4223-type-2-and-3-frames-floor-0x220-bytes)  
+
 
 **Upper part (`0x200` bytes)**  
 The upper part does not have any transparency so they consist of `32*16 = 512 = 0x200` palette indices:
@@ -245,6 +247,7 @@ The upper part does not have any transparency so they consist of `32*16 = 512 = 
 DIABDAT.MPQ:/levels/l1data/l1.cel, frame 11  
 DIABDAT.MPQ:/levels/l1data/l1.cel, frame 19
 ```
+
 
 ## 5. Compiled CEL files
 
