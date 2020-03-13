@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.2.0 - 2020-
 ### Added
-- Details about VAG file storage in DIR/BIN archives.
 - Table of contents in all specifications.
+- Details about VAG file storage in DIR/BIN archives.
 
 ### Fixed
 - Various markdown formatting issues.
