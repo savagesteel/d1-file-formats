@@ -1,17 +1,17 @@
 # Diablo 1 MIN and TIL File Formats - Level Graphics
 
 [1. Description](#1-description)  
-[2. File Naming]()  
-[2.1 CEL Graphics Files]()  
-[2.2 Color Palettes]()  
-[2.3 MIN and TIL Level Graphics Files]()  
-[3. MIN Graphics Files]()  
-[3.1 File Structure]()  
-[3.2 `{SUB-TILE DATA}`]()  
-[3.3 `{CEL FRAME REFERENCE}`]()  
-[4. TIL Graphics Files]()  
-[4.1 File Structure]()  
-[4.2 `{TILE DATA}`]()  
+[2. File Naming](#2-file-naming)  
+[2.1 CEL Graphics Files](#21-cel-graphics-files)  
+[2.2 Color Palettes](#22-color-palettes)  
+[2.3 MIN and TIL Level Graphics Files](#23-min-and-til-level-graphics-files)  
+[3. MIN Graphics Files](#3-min-graphics-files)  
+[3.1 File Structure](#31-file-structure)  
+[3.2 `{SUB-TILE DATA}`](#32-sub-tile-data)  
+[3.3 `{CEL FRAME REFERENCE}`](#33-cel-frame-reference)  
+[4. TIL Graphics Files](#4-til-graphics-files)  
+[4.1 File Structure](#41-file-structure)  
+[4.2 `{TILE DATA}`](#42-tile-data)  
 [5. Credits](#5-credits)  
 
 
@@ -41,7 +41,7 @@ The level files are in `levels/lXdata` folders for Diablo and `NLevels/lXdata` f
 Level CEL graphics files are named as follows:
 - `lX.cel`
 
-Those files contains 32x32 pixels frames (as described in part IV.2.2 of the [CEL graphics](CEL.md) file format specification).
+Those files contains 32x32 pixels frames (as described in part 4.2.2 of the [CEL graphics](https://github.com/savagesteel/d1-file-formats/blob/dev/PC-Mac/CEL.md#422-level-cel-files) file format specification).
 
 In addition the following CEL graphics files are used to store archs graphics:
 - `l1s.cel`
@@ -127,12 +127,12 @@ Those references define the resulting sub-tile starting from top left CEL frame 
 A `{CEL FRAME REFERENCE}` is one WORD long (2 bytes).  
 The first 4 bits represent the `{CEL FRAME TYPE}`:
 
-- `0x0` : Type 0 level frame, see part 4.2.2.1 of the [CEL graphics](CEL.md#4221-type-0-frames-upper-wall-0x400-bytes) file format specification).
-- `0x1` : Type 1 level frame, see part 4.2.2.2 of the [CEL graphics](CEL.md#4222-type-1-frames) file format specification).
-- `0x2` : Type 2 level frame, see part 4.2.2.3 of the [CEL graphics](CEL.md#4223-type-2-and-3-frames-floor-0x220-bytes) file format specification).
-- `0x3` : Type 3 level frame, see part 4.2.2.3 of the [CEL graphics](CEL.md#4223-type-2-and-3-frames-floor-0x220-bytes) file format specification).
-- `0x4` : Type 4 level frame, see part 4.2.2.4 of the [CEL graphics](CEL.md#4224-type-4-and-5-frames-wall-bottom-0x320-bytes) file format specification).
-- `0x5` : Type 5 level frame, see part 4.2.2.4 of the [CEL graphics](CEL.md#4224-type-4-and-5-frames-wall-bottom-0x320-bytes) file format specification).
+- `0x0` : Type 0 level frame, see part 4.2.2.1 of the [CEL graphics](https://github.com/savagesteel/d1-file-formats/blob/dev/PC-Mac/CEL.md#4221-type-0-frames-upper-wall-0x400-bytes) file format specification).
+- `0x1` : Type 1 level frame, see part 4.2.2.2 of the [CEL graphics](https://github.com/savagesteel/d1-file-formats/blob/dev/PC-Mac/CEL.md#4222-type-1-frames) file format specification).
+- `0x2` : Type 2 level frame, see part 4.2.2.3 of the [CEL graphics](https://github.com/savagesteel/d1-file-formats/blob/dev/PC-Mac/CEL.md#4223-type-2-and-3-frames-floor-0x220-bytes) file format specification).
+- `0x3` : Type 3 level frame, see part 4.2.2.3 of the [CEL graphics](https://github.com/savagesteel/d1-file-formats/blob/dev/PC-Mac/CEL.md#4223-type-2-and-3-frames-floor-0x220-bytes) file format specification).
+- `0x4` : Type 4 level frame, see part 4.2.2.4 of the [CEL graphics](https://github.com/savagesteel/d1-file-formats/blob/dev/PC-Mac/CEL.md#4224-type-4-and-5-frames-wall-bottom-0x320-bytes) file format specification).
+- `0x5` : Type 5 level frame, see part 4.2.2.4 of the [CEL graphics](https://github.com/savagesteel/d1-file-formats/blob/dev/PC-Mac/CEL.md#4224-type-4-and-5-frames-wall-bottom-0x320-bytes) file format specification).
 - `0x6` to `0xF` : Unused
 
 The last 12 bits represent the `{INCREMENTED CEL FRAME INDEX}`.  
