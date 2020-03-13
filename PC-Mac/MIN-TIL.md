@@ -127,12 +127,12 @@ Those references define the resulting sub-tile starting from top left CEL frame 
 A `{CEL FRAME REFERENCE}` is one WORD long (2 bytes).  
 The first 4 bits represent the `{CEL FRAME TYPE}`:
 
-- `0x0` : Type 0 level frame, see part 4.2.2.1 of the [CEL graphics](CEL.md) file format specification).
-- `0x1` : Type 1 level frame, see part 4.2.2.2 of the [CEL graphics](CEL.md) file format specification).
-- `0x2` : Type 2 level frame, see part 4.2.2.3 of the [CEL graphics](CEL.md) file format specification).
-- `0x3` : Type 3 level frame, see part 4.2.2.3 of the [CEL graphics](CEL.md) file format specification).
-- `0x4` : Type 4 level frame, see part 4.2.2.4 of the [CEL graphics](CEL.md) file format specification).
-- `0x5` : Type 5 level frame, see part 4.2.2.4 of the [CEL graphics](CEL.md) file format specification).
+- `0x0` : Type 0 level frame, see part 4.2.2.1 of the [CEL graphics](CEL.md#4221-type-0-frames-upper-wall-0x400-bytes) file format specification).
+- `0x1` : Type 1 level frame, see part 4.2.2.2 of the [CEL graphics](CEL.md#4222-type-1-frames) file format specification).
+- `0x2` : Type 2 level frame, see part 4.2.2.3 of the [CEL graphics](CEL.md#4223-type-2-and-3-frames-floor-0x220-bytes) file format specification).
+- `0x3` : Type 3 level frame, see part 4.2.2.3 of the [CEL graphics](CEL.md#4223-type-2-and-3-frames-floor-0x220-bytes) file format specification).
+- `0x4` : Type 4 level frame, see part 4.2.2.4 of the [CEL graphics](CEL.md#4224-type-4-and-5-frames-wall-bottom-0x320-bytes) file format specification).
+- `0x5` : Type 5 level frame, see part 4.2.2.4 of the [CEL graphics](CEL.md#4224-type-4-and-5-frames-wall-bottom-0x320-bytes) file format specification).
 - `0x6` to `0xF` : Unused
 
 The last 12 bits represent the `{INCREMENTED CEL FRAME INDEX}`.  
