@@ -70,7 +70,7 @@ Negative `{FILE SIZE}` values are only used for VAG audio files.
 #### 3.2.1 `{VAG BLOCK HEADER}`
 
 **NOTE**  
-This specification is incomplete
+This specification is incomplete.
 
 ```
 {BLOCK NUMBER}
@@ -90,7 +90,7 @@ This size includes the `{VAG BLOCK HEADER}` size (`0x80` bytes).
 #### 3.2.2 `{VAG FILE DATA}`
 
 **NOTE**  
-This specification is incomplete
+This specification is incomplete.
 
 The VAG audio data is stored as mono (1 channel) raw compressed ADPCM.  
 The sampling frequency of the VAG files is either 8000 or 11025 Hz.  
