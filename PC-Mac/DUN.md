@@ -1,21 +1,36 @@
 # Diablo 1 DUN File Format - Level Maps
 
-## I. Description
+[1. Description](#1-description)  
+[2. File structure](#2-file-structure)  
+[3. `{DUN HEADER}`](#3-dun-header)  
+[4. `{MAP LAYERS}`](#4-map-layers)  
+[4.1 `{BASE LAYER}`](#41-base-layer)  
+[4.2 `{ITEMS LAYER}`](#42-items-layer)  
+[4.3 `{MONSTERS LAYER}`](#43-monsters-layer)  
+[4.4 `{OBJECTS LAYER}`](#44-objects-layer)  
+[4.5 `{UNUSED LAYER}`](#45-unused-layer)  
+[5. Executable Hardcoded DUN Level Maps](#5-executable-hardcoded-dun-level-maps)  
+[6. Credits](#6-credits)
 
-Diablo 1 DUN level maps use the `.dun` file extension.
-The DUN level maps contain portions of levels used by the random level generation algorithm.
+
+## 1. Description
+
+Diablo 1 DUN level maps use the `.dun` file extension.  
+The DUN level maps contain portions of levels used by the random level generation algorithm.  
 Some of these files contain generic level layouts, other contain quest specific level layouts.
 
 Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-endian byte order.
 
-## II. File Structure
+
+## 2. File Structure
 
 ```
 {DUN HEADER}
 {MAP LAYERS}
 ```
 
-## III. `{DUN HEADER}`
+
+## 3. `{DUN HEADER}`
 
 ```
 {MAP WIDTH}
@@ -24,7 +39,8 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 
 `{MAP WIDTH}` and `{MAP HEIGHT}` are both one WORD long (2 bytes).
 
-## IV. `{MAP LAYERS}`
+
+## 4. `{MAP LAYERS}`
 
 ```
 {BASE LAYER}
@@ -34,46 +50,62 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 {UNUSED LAYER}]
 ```
 
-### IV.1 {BASE LAYER}
 
-`{INCREMENTED TILE INDEX} * {MAP WIDTH} * {MAP HEIGHT}`
+### 4.1 `{BASE LAYER}`
 
-This layer is the base layer of the map, it defines the floor/walls/doors.
-The structure consists of `{INCREMENTED TILE INDEX}`es.
-Those indices define the level starting from top left tile and ending with bottom right tile.
+```
+{INCREMENTED TILE INDEX} * {MAP WIDTH} * {MAP HEIGHT}
+```
+
+This layer is the base layer of the map, it defines the floor/walls/doors.  
+The structure consists of `{INCREMENTED TILE INDEX}`es.  
+Those indices define the level starting from top left tile and ending with bottom right tile.  
 The real tile index (in `lX.til`) is obtained with the following formula:
 
-`{TILE INDEX} = {INCREMENTED TILE INDEX} - 1`
+```
+{TILE INDEX} = {INCREMENTED TILE INDEX} - 1
+```
 
 When `{INCREMENTED TILE INDEX}` is equal to 0 the default floor tile is used.
 
-### IV.2 `{ITEMS LAYER}`
 
-`{ITEMS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4`
+### 4.2 `{ITEMS LAYER}`
 
-This layer defines which items lie on the level ground.
+```
+{ITEMS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+```
+
+This layer defines which items lie on the level ground.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
 
-### IV.3 `{MONSTERS LAYER}`
 
-`{MONSTERS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4`
+### 4.3 `{MONSTERS LAYER}`
 
-This layer defines which monsters stand in the level.
+```
+{MONSTERS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+```
+
+This layer defines which monsters stand in the level.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
 
-### IV.4 `{OBJECTS LAYER}`
 
-`{OBJECTS INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4`
+### 4.4 `{OBJECTS LAYER}`
 
-This layer defines which objects (chests, stands, etc.) are positioned in the level.
+```
+{OBJECTS INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+```
+
+This layer defines which objects (chests, stands, etc.) are positioned in the level.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
 
-### IV.5 `{UNUSED LAYER}`
 
-`{WORD} * {MAP WIDTH} * {MAP HEIGHT} * 4`
+### 4.5 `{UNUSED LAYER}`
 
-This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
+```
+{WORD} * {MAP WIDTH} * {MAP HEIGHT} * 4
+```
 
+This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.  
 The use of this layer is unknown, only the following DUN level map files use it, with `{WORD}` values of `0` or `1` defining
 something looking like the base level layer shape:
 
@@ -82,7 +114,8 @@ DIABDAT.MPQ:/levels/l1data/vile1.dun
 DIABDAT.MPQ:/levels/l1data/vile2.dun
 ```
 
-## V. Executable Hardcoded DUN Level Maps
+
+## 5. Executable Hardcoded DUN Level Maps
 
 Hellfire features hardcoded DUN level maps.
 
@@ -98,10 +131,11 @@ The Cornerstone of the World DUN level map is located at the following offsets:
 - Hellfire 1.01 : `0x000942D0`
 The data is 27 bytes long.
 
-These hardcoded DUN level maps differ from the regular DUN level files, instead using WORDs for storing data they use bytes.
+These hardcoded DUN level maps differ from the regular DUN level files, instead using WORDs for storing data they use bytes.  
 The first byte is the level map width, the second byte is the DUN level map height and then each byte is an incremented tile index.
 
-## VI. Credits
+
+## 6. Credits
 
 Most of this document is based on the work of the following people:
 - Ulmo

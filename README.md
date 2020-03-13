@@ -1,7 +1,6 @@
 # Diablo 1 and Hellfire File Formats Specifications
 
-The goal of this project is to provide precise specifications for Diablo 1 (and Hellfire add-on) file formats.
-
+The goal of this project is to provide precise specifications for Diablo 1 (and Hellfire add-on) file formats.  
 Most of the knowledge here comes from the Diablo 1 and Hellfire modding community.
 
 ## PC-Mac
@@ -13,8 +12,9 @@ Most of the knowledge here comes from the Diablo 1 and Hellfire modding communit
 - [Diablo 1 MIN and TIL File Formats - Level Graphics](PC-Mac/MIN-TIL.md)
 - [Diablo 1 DUN File Format - Level Maps](PC-Mac/DUN.md)
 
+
 ## PlayStation
 
 - [Diablo 1 DIR/BIN File Format - Archives](PSX/DIRBIN.md)
 
-*Work in progress: MPQ, SOL, AMP, PlayStation version formats*
+*Work in progress: MPQ, SOL, AMP, PlayStation version formats.*
