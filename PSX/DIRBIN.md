@@ -1,13 +1,13 @@
 # Diablo 1 DIR/BIN File Format - Archives
 
 [1. Description](#1-description)  
-[2. DIR file structure]()  
-[2.1 `{FILE ENTRY METADATA}`]()  
-[3. BIN file structure]()  
-[3.1 `{FILE ENTRY}`]()  
-[3.2 `{VAG FILE ENTRY}`]()  
-[3.2.1 `{VAG BLOCK HEADER}`]()  
-[3.2.2 `{VAG FILE DATA}`]()  
+[2. DIR file structure](#2-dir-file-structure)  
+[2.1 `{FILE ENTRY METADATA}`](#21-file-entry-metadata)  
+[3. BIN file structure](#3-bin-file-structure)  
+[3.1 `{FILE ENTRY}`](#31-file-entry)  
+[3.2 `{VAG FILE ENTRY}`](#32-vag-file-entry)  
+[3.2.1 `{VAG BLOCK HEADER}`](#321-vag-block-header)  
+[3.2.2 `{VAG FILE DATA}`](#322-vag-file-data)  
 [4. Credits](#4-credits)  
 
 
