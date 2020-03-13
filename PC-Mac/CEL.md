@@ -19,7 +19,8 @@
 ## 1. Description
 
 Diablo 1 CEL graphics files use the `.cel` file extension.  
-CEL graphics files contain one or more frames (images). A CEL graphics file needs a [color palette](PAL.md) file to be rendered.  
+CEL graphics files contain one or more frames (images). A CEL graphics file needs a [color palette](PAL.md) file to be rendered.
+
 CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian byte order.
 
 
