@@ -1,10 +1,27 @@
 # Diablo 1 CEL File Format - Graphics
 
+[1. Description](#1-description)  
+[2. File structure](#2-file-structure)  
+[3. `{CEL HEADER}`](#3-cel-header)  
+[4. `{CEL FRAME}`](#4-cel-frame)  
+[4.1 `{CEL FRAME HEADER}`](41-cel-frame-header)  
+[4.2 `{CEL FRAME DATA}`](42-cel-frame-data)  
+[4.2.1 Regular CEL files](421-regular-cel-files)  
+[4.2.2 Level CEL files](422-level-cel-files)  
+[4.2.2.1 Type 0 frames (upper wall) (`0x400` bytes)](4221-type-0-frames-upper-wall-0x400-bytes)  
+[4.2.2.2 Type 1 frames](4222-type-1-frames)  
+[4.2.2.3 Type 2 and 3 frames (floor) (`0x220` bytes)](4223-type-2-and-3-frames-floor-0x220-bytes)  
+[4.2.2.4 Type 4 and 5 frames (wall bottom) (`0x320` bytes)](4224-type-4-and-5-frames-wall-bottom-0x320-bytes)  
+[5. Compiled CEL files](5-compiled-cel-files)  
+[6. Credits](#6-credits)  
+
+
 ## 1. Description
 
 Diablo 1 CEL graphics files use the `.cel` file extension.  
 CEL graphics files contain one or more frames (images). A CEL graphics file needs a [color palette](PAL.md) file to be rendered.  
 CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian byte order.
+
 
 ## 2. File structure
 
@@ -12,6 +29,7 @@ CEL data longer than one byte (WORDs and DWORDs) is stored using little-endian b
 {CEL HEADER}
 {CEL FRAME} * {NUMBER OF CEL FRAMES}
 ```
+
 
 ## 3. `{CEL HEADER}`
 
@@ -25,12 +43,14 @@ The `{NUMBER OF CEL FRAMES}` is one DWORD long.
 Then there is one DWORD for each frame of the CEL graphics file, each indicating the `{CEL FRAME OFFSET}` where the frame data begins.  
 After the CEL frame offsets, comes one last DWORD containing the CEL graphics file size.
 
+
 ## 4. `{CEL FRAME}`
 
 ```
 [{CEL FRAME HEADER}]
 {CEL FRAME DATA}
 ```
+
 
 ### 4.1 `{CEL FRAME HEADER}`
 
@@ -45,6 +65,7 @@ For each WORD of the `{CEL FRAME HEADER}` the following formula can be used:
 `{CEL FRAME WIDTH} = {CEL FRAME CHUNK NUMBER OF PIXELS} / 32`  
 `{CEL FRAME CHUNK NUMBER OF PIXELS}` is the number of pixels between two offsets (WORDs) of the `{CEL FRAME HEADER}`.
 
+
 ### 4.2 `{CEL FRAME DATA}`
 
 A CEL frame is an image.  
@@ -54,6 +75,7 @@ Each pixel line is defined from left to right.
 There are two types of CEL graphics files : regular CEL files and level CEL files.  
 These types share the same `{CEL HEADER}` structure described in part III of this document.  
 Depending on the CEL type, they feature `{CEL FRAME HEADER}`s or not, and their pixel data is not always encoded the same way.
+
 
 #### 4.2.1 Regular CEL files
 	
@@ -99,6 +121,7 @@ DIABDAT.MPQ:/ctrlpan/spelicon.cel
 DIABDAT.MPQ:/data/inv/objcurs.cel
 ```
 
+
 #### 4.2.2 Level CEL files
 
 Level CEL files contain typically more than 500 frames.  
@@ -114,6 +137,7 @@ DIABDAT.MPQ:/levels/l1data/l1.cel
 DIABDAT.MPQ:/levels/l3data/l3.cel
 ```
 
+
 ##### 4.2.2.1 Type 0 frames (upper wall) (`0x400` bytes)
 
 These frames do not have any transparency so they consist of `32*32 = 1024 = 0x400` palette indices:
@@ -123,6 +147,7 @@ These frames do not have any transparency so they consist of `32*32 = 1024 = 0x4
 **EXAMPLE**
 
 `DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 2
+
 
 ##### 4.2.2.2 Type 1 frames
 
@@ -193,7 +218,8 @@ Last line is not encoded, it consists of 32 transparent pixels.
 `DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 6  
 `DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 7
 
-##### 4.2.2.4  Type 4 and 5 frames (wall bottom) (`0x320` bytes)
+
+##### 4.2.2.4 Type 4 and 5 frames (wall bottom) (`0x320` bytes)
 
 These frames consist of a lower part and an upper part, each with a 32 x 16 pixels size.  
 Type 4 frames have transparency on the left.  
@@ -213,6 +239,7 @@ The upper part does not have any transparency so they consist of `32*16 = 512 = 
 `DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 11  
 `DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 19
 
+
 ## 5. Compiled CEL files
 
 Some CEL files are in fact a compilation of multiple CEL files, thus the header is as follows:
@@ -228,7 +255,8 @@ DIABDAT.MPQ:/towners/animals/cow.cel
 DIABDAT.MPQ:/towners/smith/smithw.cel
 ```
 
-## VI. Credits
+
+## 6. Credits
 
 Most of this document is based on the work of the following people:
 - Honi B
