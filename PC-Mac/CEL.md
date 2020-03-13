@@ -143,16 +143,19 @@ DIABDAT.MPQ:/levels/l3data/l3.cel
 
 These frames do not have any transparency so they consist of `32*32 = 1024 = 0x400` palette indices:
 
-`{PALETTE INDEX} * 1024`
+```
+{PALETTE INDEX} * 1024
+```
 
 **EXAMPLE**
 
-`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 2
-
+```
+DIABDAT.MPQ:/levels/l1data/l1.cel, frame 2
+```
 
 ##### 4.2.2.2 Type 1 frames
 
-Type 1 frames use the regular CEL encoding (see part IV.2.1).
+Type 1 frames use the regular CEL encoding (see part 4.2.1).
 They do not have a constant size.
 
 
@@ -216,9 +219,10 @@ Last line is not encoded, it consists of 32 transparent pixels.
 
 **EXAMPLE**
 
-`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 6  
-`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 7
-
+```
+DIABDAT.MPQ:/levels/l1data/l1.cel, frame 6  
+DIABDAT.MPQ:/levels/l1data/l1.cel, frame 7
+```
 
 ##### 4.2.2.4 Type 4 and 5 frames (wall bottom) (`0x320` bytes)
 
@@ -228,7 +232,7 @@ Type 5 frames have transparency on the right.
 
 **Lower part (`0x120` bytes)**  
 The lower part of these `0x320` bytes frames is the same than the lower part of type 2 and 3 frames
-(see part IV.2.2.3).
+(see part 4.2.2.3).
 
 **Upper part (`0x200` bytes)**  
 The upper part does not have any transparency so they consist of `32*16 = 512 = 0x200` palette indices:
@@ -237,15 +241,18 @@ The upper part does not have any transparency so they consist of `32*16 = 512 = 
 
 **EXAMPLE**
 
-`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 11  
-`DIABDAT.MPQ:/levels/l1data/l1.cel`, frame 19
-
+```
+DIABDAT.MPQ:/levels/l1data/l1.cel, frame 11  
+DIABDAT.MPQ:/levels/l1data/l1.cel, frame 19
+```
 
 ## 5. Compiled CEL files
 
 Some CEL files are in fact a compilation of multiple CEL files, thus the header is as follows:
 
-`{CEL OFFSET} * {NUMBER OF CEL}`
+```
+{CEL OFFSET} * {NUMBER OF CEL}
+```
 
 After this header, at each `{CEL OFFSET}` comes a CEL file with the structure described in part II.
 
