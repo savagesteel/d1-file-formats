@@ -16,17 +16,19 @@ This palette is used to render Tristram.
 ![town.pal](images/PAL_1_town_pal.png)
 
 The first half of the palette is used to render the level graphics.  
-Below the `town.pal` palette hits for `DIABDAT.MPQ/levels/towndata/town.cel` (tile 71).
-| Image | Palette hits |
-|-------|--------------|
-| ![town.cel](images/PAL_2_town_cel.png) | ![town.cel palette hits](images/PAL_3_town_pal_hits.png) |
+> **Example**:  
+> `DIABDAT.MPQ/levels/towndata/town.cel` (tile 71).
+> | Image | Palette hits |
+> |-------|--------------|
+> | ![town.cel](images/PAL_2_town_cel.png) | ![town.cel palette hits](images/PAL_3_town_pal_hits.png) |
 
 
 The second half is used to render characters, monsters and objects.  
-Below the `town.pal` palette hits for `DIABDAT.MPQ/towners/smith/smithn.cel` (frame 1).
-| Image | Palette hits |
-|-------|--------------|
-| ![smithn.cel](images/PAL_4_smithn_cel.png) | ![smithn.cel palette hits](images/PAL_5_smithn_pal_hits.png) |
+> **Example**:  
+> `DIABDAT.MPQ/towners/smith/smithn.cel` (frame 1).
+> | Image | Palette hits |
+> |-------|--------------|
+> | ![smithn.cel](images/PAL_4_smithn_cel.png) | ![smithn.cel palette hits](images/PAL_5_smithn_pal_hits.png) |
 
 
 ## 2. File structure
