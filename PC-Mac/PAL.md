@@ -2,7 +2,7 @@
 
 [1. Description](#1-description)  
 [2. File structure](#2-file-structure)  
-[3. `PALETTE_COLOR` (3 bytes)](#3-palette-color-3-bytes)  
+[3. `PALETTE_COLOR` (3 bytes)](#3-palette_color-3-bytes)  
 
 
 ## 1. Description
