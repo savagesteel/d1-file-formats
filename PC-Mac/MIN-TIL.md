@@ -168,14 +168,28 @@ Sub-tiles coordinates from top left corner of the tile, in pixels are:
 ### 4.2 `{TILE DATA}`
 
 ```
-{SUB-TILE INDEX} * 4
+{DECREMENTED SUB-TILE INDEX} * 4
 ```
 
-A `{SUB-TILE INDEX}` is one WORD long (2 bytes).  
-To obtain the real sub-tile index, add 1 to `{SUB-TILE INDEX}`.  
+A `{DECREMENTED SUB-TILE INDEX}` is one WORD long (2 bytes).  
+To obtain the real sub-tile index, add 1 to `{DECREMENTED SUB-TILE INDEX}`.  
 
-Those indices define the resulting tile starting from top left sub-tile and ending with bottom right sub-tile.
 
+The real sub-tile index in `lX.min` CEL graphics file is obtained with the following formula:
+
+```
+{SUB-TILE INDEX} = {DECREMENTED SUB-TILE INDEX} + 1
+```
+
+The four indices define the resulting tile starting from top left sub-tile and ending with bottom right sub-tile.
+
+```
+  0
+2   1
+  3
+```
+
+When `{DECREMENTED SUB-TILE INDEX}` is equal to 0 no sub-tile is added to the tile, instead area is transparent.
 
 ## 5. Credits
 
