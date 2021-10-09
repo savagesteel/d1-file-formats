@@ -47,10 +47,9 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 [{ITEMS LAYER}
 {MONSTERS LAYER}
 {OBJECTS LAYER}
-{TRANSVAL LAYER}]
+{UNUSED LAYER}]
 ```
 
-Each INDEX is one WORD long (2 bytes).
 
 ### 4.1 `{BASE LAYER}`
 
@@ -100,18 +99,19 @@ This layer defines which objects (chests, stands, etc.) are positioned in the le
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
 
 
-### 4.5 `{TRANSVAL LAYER}`
+### 4.5 `{UNUSED LAYER}`
 
 ```
-{TRANSVAL INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{WORD} * {MAP WIDTH} * {MAP HEIGHT} * 4
 ```
 
-This layer defines the transval index (effectively the room index) of the given sub-tile.
-This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
-In vanilla diablo this part is ignored, except for the set-level of vile-betrayer:
+This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.  
+The use of this layer is unknown, only the following DUN level map files use it, with `{WORD}` values of `0` or `1` defining
+something looking like the base level layer shape:
 
 ```
 DIABDAT.MPQ:/levels/l1data/vile1.dun
+DIABDAT.MPQ:/levels/l1data/vile2.dun
 ```
 
 
