@@ -8,7 +8,7 @@
 [4.2 `{ITEMS LAYER}`](#42-items-layer)  
 [4.3 `{MONSTERS LAYER}`](#43-monsters-layer)  
 [4.4 `{OBJECTS LAYER}`](#44-objects-layer)  
-[4.5 `{UNUSED LAYER}`](#45-unused-layer)  
+[4.5 `{TRANSVAL LAYER}`](#45-transval-layer)  
 [5. Executable Hardcoded DUN Level Maps](#5-executable-hardcoded-dun-level-maps)  
 [6. Credits](#6-credits)
 
