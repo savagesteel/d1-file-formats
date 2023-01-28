@@ -13,7 +13,7 @@ The SOL metadata file contains flags (one BYTE) for the sub-tiles.
 ## 2. File Structure
 
 ```
-{SUB-TILE FLAG} {INCREMENTED SUB-TILE INDEX}
+{SUB-TILE FLAG} * {NUMBER OF SUBTILES}
 ```
 
 The bits of the {SUB-TILE FLAG} have the following meaning (starting from lowest bit):
