@@ -8,7 +8,7 @@
 [4.2 `{ITEMS LAYER}`](#42-items-layer)  
 [4.3 `{MONSTERS LAYER}`](#43-monsters-layer)  
 [4.4 `{OBJECTS LAYER}`](#44-objects-layer)  
-[4.5 `{TRANSVAL LAYER}`](#45-transval-layer)  
+[4.5 `{ROOMS LAYER}`](#45-rooms-layer)  
 [5. Executable Hardcoded DUN Level Maps](#5-executable-hardcoded-dun-level-maps)  
 [6. Credits](#6-credits)
 
@@ -47,7 +47,7 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 [{ITEMS LAYER}
 {MONSTERS LAYER}
 {OBJECTS LAYER}
-{TRANSVAL LAYER}]
+{ROOMS LAYER}]
 ```
 
 Each INDEX is one WORD long (2 bytes).
@@ -74,17 +74,18 @@ When `{INCREMENTED TILE INDEX}` is equal to 0 the default floor tile is used.
 ### 4.2 `{ITEMS LAYER}`
 
 ```
-{ITEMS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{ITEMS TABLE INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
 This layer defines which items lie on the level ground.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
+The content of this part is not used by the game.
 
 
 ### 4.3 `{MONSTERS LAYER}`
 
 ```
-{MONSTERS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{MONSTERS TABLE INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
 This layer defines which monsters stand in the level.  
@@ -94,26 +95,24 @@ This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BA
 ### 4.4 `{OBJECTS LAYER}`
 
 ```
-{OBJECTS INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{OBJECTS INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
 This layer defines which objects (chests, stands, etc.) are positioned in the level.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
 
 
-### 4.5 `{TRANSVAL LAYER}`
+### 4.5 `{ROOMS LAYER}`
 
 ```
-{TRANSVAL INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{ROOMS INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
-This layer defines the transval index (effectively the room index) of the given sub-tile.  
+This layer defines the room index of the given sub-tile.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.  
-In vanilla diablo this part is ignored except for the set-level of vile-betrayer:
-
-```
-DIABDAT.MPQ:/levels/l1data/vile1.dun
-```
+The values are only used in case of complete set-levels.  
+In caves every non-external subtile is initialized with room-index of 1.  
+The rooms of "Chamber of Bone" are hardcoded in the game.
 
 
 ## 5. Executable Hardcoded DUN Level Maps
