@@ -68,7 +68,7 @@ The real tile index (in `lX.til`) is obtained with the following formula:
 {TILE INDEX} = {INCREMENTED TILE INDEX} - 1
 ```
 
-When `{INCREMENTED TILE INDEX}` is equal to 0 the default floor tile is used.
+When `{INCREMENTED TILE INDEX}` is equal to 0 the default floor tile is used and might be changed if it is not a complete map.
 
 
 ### 4.2 `{ITEMS LAYER}`
