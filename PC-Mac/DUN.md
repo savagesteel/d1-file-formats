@@ -8,7 +8,7 @@
 [4.2 `{ITEMS LAYER}`](#42-items-layer)  
 [4.3 `{MONSTERS LAYER}`](#43-monsters-layer)  
 [4.4 `{OBJECTS LAYER}`](#44-objects-layer)  
-[4.5 `{UNUSED LAYER}`](#45-unused-layer)  
+[4.5 `{ROOMS LAYER}`](#45-rooms-layer)  
 [5. Executable Hardcoded DUN Level Maps](#5-executable-hardcoded-dun-level-maps)  
 [6. Credits](#6-credits)
 
@@ -47,8 +47,10 @@ Level maps data longer than one byte (WORDs and DWORDs)	is stored using little-e
 [{ITEMS LAYER}
 {MONSTERS LAYER}
 {OBJECTS LAYER}
-{UNUSED LAYER}]
+{ROOMS LAYER}]
 ```
+
+Each INDEX is one WORD long (2 bytes).
 
 
 ### 4.1 `{BASE LAYER}`
@@ -66,23 +68,24 @@ The real tile index (in `lX.til`) is obtained with the following formula:
 {TILE INDEX} = {INCREMENTED TILE INDEX} - 1
 ```
 
-When `{INCREMENTED TILE INDEX}` is equal to 0 the default floor tile is used.
+When `{INCREMENTED TILE INDEX}` is equal to 0 the default floor tile is used and might be changed if it is not a complete map.
 
 
 ### 4.2 `{ITEMS LAYER}`
 
 ```
-{ITEMS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{ITEMS TABLE INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
 This layer defines which items lie on the level ground.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
+The content of this part is not used by the game.
 
 
 ### 4.3 `{MONSTERS LAYER}`
 
 ```
-{MONSTERS TABLE INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{MONSTERS TABLE INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
 This layer defines which monsters stand in the level.  
@@ -92,27 +95,24 @@ This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BA
 ### 4.4 `{OBJECTS LAYER}`
 
 ```
-{OBJECTS INDEX} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{OBJECTS INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
 This layer defines which objects (chests, stands, etc.) are positioned in the level.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.
 
 
-### 4.5 `{UNUSED LAYER}`
+### 4.5 `{ROOMS LAYER}`
 
 ```
-{WORD} * {MAP WIDTH} * {MAP HEIGHT} * 4
+{ROOMS INDEX} * {MAP WIDTH * 2} * {MAP HEIGHT * 2}
 ```
 
+This layer defines the room index of the given sub-tile.  
 This layer is a sub-tile layer, which is 4 times the size of the tile layer `{BASE LAYER}`.  
-The use of this layer is unknown, only the following DUN level map files use it, with `{WORD}` values of `0` or `1` defining
-something looking like the base level layer shape:
-
-```
-DIABDAT.MPQ:/levels/l1data/vile1.dun
-DIABDAT.MPQ:/levels/l1data/vile2.dun
-```
+The values are only used in case of complete set-levels.  
+In caves every non-external subtile is initialized with room-index of 1.  
+The rooms of "Chamber of Bone" are hardcoded in the game.
 
 
 ## 5. Executable Hardcoded DUN Level Maps
